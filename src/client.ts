@@ -82,6 +82,7 @@ export class NexHealthClient {
                 subdomain: string,
                 location_id: number
             }) => this.request("patients", 'GET', params),
+            //TODO: listAll iterates through each page
         }
     }
 
