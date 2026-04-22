@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from "../../types/v2/base.js";
+import type { NexHealthApiResponse } from "../../types/base.js";
 import type {
     Patient,
     GetPatientParams,
@@ -7,18 +7,15 @@ import type {
 
 import type { RequestFunction } from "../../types/common.js";
 
-export class PatientsResource {
-    constructor(private request: RequestFunction) {}
-
-    getPatient(id: number, params: GetPatientParams): Promise<NexHealthApiResponse<Patient>> {
-        return this.request(`patients/${id}`, 'GET', params);
-    }
-
-    getPatients(queryParams: { subdomain: string, location_id: number }): Promise<NexHealthApiResponse<Patient[]>> {
-        return this.request(`patients`, 'GET', queryParams);
-    }
-
-    create(body: CreatePatientBody): Promise<NexHealthApiResponse<Patient>> {
-        return this.request('patients', 'POST', body);
+export function V2PatientsResource(request: RequestFunction) {
+    return {
+        get: (patientId: number, params: {
+            subdomain: string
+        }) => request<NexHealthApiResponse<Patient>>(`patients/${patientId}`, 'GET', params),
+        list: (params: {
+            subdomain: string,
+            location_id: number
+        }) => request<NexHealthApiResponse<Patient[]>>("patients", 'GET', params),
+        //TODO: listAll iterates through each page
     }
 }

@@ -1,11 +1,10 @@
-import { PatientsResource } from "./patients.js";
-
 import type { RequestFunction } from "../../types/common.js";
+import { V2PatientsResource } from "./patients.js";
 
 export class V2Resources {
-    readonly patients: PatientsResource;
+    readonly patients: ReturnType<typeof V2PatientsResource>;
 
     constructor(request: RequestFunction) {
-        this.patients = new PatientsResource(request);
+        this.patients = V2PatientsResource(request);
     }
 }

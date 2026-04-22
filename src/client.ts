@@ -1,23 +1,29 @@
 import { NexHealthAPIError } from "./error.js";
 import type { AuthenticatesData } from "./types/v2/authenticates.js";
-import type { NexHealthApiResponse } from "./types/v2/base.js";
-
+import type { NexHealthApiResponse } from "./types/base.js";
 import type { Method } from "./types/common.js";
-import type { GetPatientParams } from "./types/v2/patients.js";
+import { V2Resources } from "./resources/v2/index.js";
+import { V2024Resources } from "./resources/v2024/index.js";
 
 export class NexHealthClient {
     private apiKey: string;
     private bearerToken: string | null = null;
     private tokenExpiry: number = 0;
 
-    // readonly v2: V2Resources;
-
     private baseURL = 'https://nexhealth.info/';
+
+    readonly v2: V2Resources;
+    readonly v2024: V2024Resources;
 
     constructor(apiKey: string) {
         this.apiKey = apiKey;
-
-        // this.v2 = new V2Resources(this.request.bind(this));
+        
+        this.v2 = new V2Resources(
+            (endpoint, method, queryParams, data) => this.request(endpoint, method, queryParams, data)
+        );
+        this.v2024 = new V2024Resources(
+            (endpoint, method, queryParams, data) => this.request(endpoint, method, queryParams, data, undefined, { "Nex-Api-Version" : "v20240412" })
+        );
     }
 
     private async getBearerToken(): Promise<string | null> {
@@ -71,26 +77,5 @@ export class NexHealthClient {
         }
 
         return response.json() as Promise<T>;
-    }
-
-    readonly v2 = {
-        patients: {
-            get: (patientId: number, params: {
-                subdomain: string
-            }) => this.request(`patients/${patientId}`, 'GET', params),
-            list: (params: {
-                subdomain: string,
-                location_id: number
-            }) => this.request("patients", 'GET', params),
-            //TODO: listAll iterates through each page
-        }
-    }
-
-    readonly v2024 = {
-        patients: {
-            get: (patientId: number, params: {
-                subdomain: string
-            }) => this.request(`patients/${patientId}`, 'GET', params, undefined, undefined, { 'Nex-Api-Version': 'v20240412' }),
-        }
     }
 }
