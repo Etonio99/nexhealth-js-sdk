@@ -1,8 +1,6 @@
 import type { NexHealthApiResponse } from "../../types/base.js";
 import type {
     Patient,
-    GetPatientParams,
-    CreatePatientBody,
 } from "../../types/v2/patients.js";
 
 import type { RequestFunction } from "../../types/common.js";

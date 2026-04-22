@@ -1,12 +1,13 @@
-// Run this with node test/index.mjs
+// Run this with node --env-file=.env test/index.mjs
 
 import { NexHealthClient } from '../dist/index.js';
 
-const nexhealth = new NexHealthClient('dXNlci02MTQtc2FuZGJveA.JP4-9VdVHHXEyXlSA1dDtFgaOAH8psJW');
+const nexhealth = new NexHealthClient(process.env.API_KEY);
 
-const response = await nexhealth.v2024.patients.list({
+const response = await nexhealth.v2.patients.listAll({
     subdomain: "nexhealthsmiles",
     location_id: "19617",
+    name: "Ethan",
 });
 
-console.log(response);
+console.log("RESPONSE:", response);

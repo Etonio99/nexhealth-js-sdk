@@ -22,7 +22,7 @@ export class NexHealthClient {
             (endpoint, method, queryParams, data) => this.request(endpoint, method, queryParams, data)
         );
         this.v2024 = new V2024Resources(
-            (endpoint, method, queryParams, data) => this.request(endpoint, method, queryParams, data, undefined, { "Nex-Api-Version" : "v20240412" })
+            (endpoint, method, queryParams, data) => this.request(endpoint, method, queryParams, data, { "Nex-Api-Version" : "v20240412" })
         );
     }
 
@@ -31,25 +31,38 @@ export class NexHealthClient {
             return this.bearerToken;
         }
 
-        const response = await this.request<NexHealthApiResponse<AuthenticatesData>>('authenticates', 'POST', null, null, this.apiKey);
-        if (!response.code || !response.data) {
+        const url = `${this.baseURL}authenticates`
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                'Authorization': this.apiKey,
+                'accept': 'application/vnd.Nexhealth+json;version=2',
+            },
+        });
+
+        if (!response.ok) {
             return null;
         }
 
-        this.bearerToken = response.data.token;
+        const data: NexHealthApiResponse<AuthenticatesData> = await response.json();
+
+        if (!data.code || !data.data) {
+            return null;
+        }
+
+        this.bearerToken = data.data.token;
         this.tokenExpiry = Date.now() + 3_600_000;
 
         return this.bearerToken;
     }
 
-    private async request<T>(endpoint: string, method: Method = 'GET', queryParams?: any, data?: any, token?: string, headers?: Record<string, string>): Promise<T> {
+    private async request<T>(endpoint: string, method: Method = 'GET', queryParams?: any, data?: any, headers?: Record<string, string>): Promise<T> {
         const params = new URLSearchParams(queryParams);
         const url = `${this.baseURL}${endpoint}${queryParams ? `?${params.toString()}` : ""}`;
 
         const resolveToken = async (): Promise<string | null> => {
-            if (token) return token;
             const bearerToken = await this.getBearerToken();
-            return `Bearer ${bearerToken}`;
+            return bearerToken ? `Bearer ${bearerToken}` : null;
         }
 
         const resolvedToken = await resolveToken();
