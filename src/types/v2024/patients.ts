@@ -57,6 +57,7 @@ export type Hipaa = {
 
 export type GetPatientQueryParams = {
     subdomain: string;
+    // TODO: Add "Include"
 };
 
 type BaseListPatientQueryParams = {

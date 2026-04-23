@@ -1,6 +1,5 @@
 import type { NexHealthApiResponse } from "../../types/base.js";
 import type {
-    PatientInsuranceCoverage,
     CreatePatientBodyParams,
     CreatePatientQueryParams,
     GetPatientInsuranceCoveragesQueryParams,
@@ -13,12 +12,13 @@ import type {
 import type { RequestFunction } from "../../types/common.js";
 import { V2Constants } from "./constants.js";
 import { NexHealthAPIError } from "../../error.js";
+import type { InsuranceCoverage } from "../../types/v2/insurances.js";
 
 export function V2PatientsResource(request: RequestFunction) {
     return {
         create: (queryParams: CreatePatientQueryParams, bodyParams: CreatePatientBodyParams) => request<NexHealthApiResponse<{ user: Patient }>>("patients", "POST", queryParams, bodyParams),
         get: (patientId: number, queryParams: GetPatientQueryParams) => request<NexHealthApiResponse<Patient>>(`patients/${patientId}`, "GET", queryParams),
-        getInsuranceCoverages: (patientId: number, queryParams: GetPatientInsuranceCoveragesQueryParams) => request<NexHealthApiResponse<PatientInsuranceCoverage>>(`patients/${patientId}/insurance_coverages`, "GET", queryParams),
+        getInsuranceCoverages: (patientId: number, queryParams: GetPatientInsuranceCoveragesQueryParams) => request<NexHealthApiResponse<InsuranceCoverage>>(`patients/${patientId}/insurance_coverages`, "GET", queryParams),
         list: (queryParams: ListPatientsQueryParams) => request<NexHealthApiResponse<{ patients: Patient[] }>>("patients", "GET", queryParams),
         listAll: async (queryParams: ListAllPatientsQueryParams): Promise<NexHealthApiResponse<{ patients: Patient[] }>> => {
             let hasNextPage = true;

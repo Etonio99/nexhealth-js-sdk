@@ -10,7 +10,7 @@ export class NexHealthClient {
     private bearerToken: string | null = null;
     private tokenExpiry: number = 0;
 
-    private baseURL = 'https://nexhealth.info/';
+    private baseURL = "https://nexhealth.info/";
 
     readonly v2: V2Resources;
     readonly v2024: V2024Resources;
@@ -35,8 +35,8 @@ export class NexHealthClient {
         const response = await fetch(url, {
             method: "POST",
             headers: {
-                'Authorization': this.apiKey,
-                'accept': 'application/vnd.Nexhealth+json;version=2',
+                "Authorization": this.apiKey,
+                "accept": "application/vnd.Nexhealth+json;version=2",
             },
         });
 
@@ -56,9 +56,22 @@ export class NexHealthClient {
         return this.bearerToken;
     }
 
-    private async request<T>(endpoint: string, method: Method = 'GET', queryParams?: any, bodyParams?: any, headers?: Record<string, string>): Promise<T> {
-        const params = new URLSearchParams(queryParams);
-        const url = `${this.baseURL}${endpoint}${queryParams ? `?${params.toString()}` : ""}`;
+    private buildQueryString(params: Record<string, any>): string {
+        const searchParams = new URLSearchParams();
+        for (const [key, value] of Object.entries(params)) {
+            if (Array.isArray(value)) {
+                for (const item of value) {
+                    searchParams.append(`${key}[]`, String(item));
+                }
+            } else if (value != null) {
+                searchParams.append(key, String(value));
+            }
+        }
+        return searchParams.toString();
+    }
+
+    private async request<T>(endpoint: string, method: Method = "GET", queryParams?: any, bodyParams?: any, headers?: Record<string, string>): Promise<T> {
+        const url = `${this.baseURL}${endpoint}${queryParams ? `?${this.buildQueryString(queryParams)}` : ""}`;
 
         const resolveToken = async (): Promise<string | null> => {
             const bearerToken = await this.getBearerToken();
@@ -67,12 +80,12 @@ export class NexHealthClient {
 
         const resolvedToken = await resolveToken();
         if (!resolvedToken) {
-            throw new NexHealthAPIError('Failed to authenticate');
+            throw new NexHealthAPIError("Failed to authenticate");
         }
 
         const finalHeaders: Record<string, string> = {
-            'Authorization': resolvedToken,
-            'accept': 'application/vnd.Nexhealth+json;version=2',
+            "Authorization": resolvedToken,
+            "accept": "application/vnd.Nexhealth+json;version=2",
             ...headers,
         }
 
@@ -88,11 +101,10 @@ export class NexHealthClient {
 
         const parsed = await response.json();
 
-        if ('code' in parsed) {
+        if ("code" in parsed) {
             return parsed as T;
         }
 
-        const responseText = await response.text();
-        throw new NexHealthAPIError('Unexpected response format from NexHealth API', response.status, responseText);
+        throw new NexHealthAPIError("Unexpected response format from NexHealth API", response.status);
     }
 }

@@ -1,3 +1,9 @@
+import type { Adjustment } from "./adjustments.js";
+import type { Charge } from "./charges.js";
+import type { InsuranceCoverage } from "./insurances.js";
+import type { Payment } from "./payments.js";
+import type { Procedure } from "./procedures.js";
+
 export type Patient = {
     id: number;
     email: string | null;
@@ -11,6 +17,18 @@ export type Patient = {
     foreign_id: string | null;
     foreign_id_type: string | null;
     bio: Bio;
+    procedures?: Procedure[];
+    insurance_coverages?: InsuranceCoverage[];
+    adjustments?: Adjustment[];
+    charges?: Charge[];
+    payments?: Payment[];
+    address?: {
+        line_1: string | null;
+        line_2: string | null;
+        postal_code: string | null;
+        city: string | null;
+        region: string | null;
+    }
 };
 
 export type Bio = {
@@ -35,43 +53,14 @@ export type Bio = {
     custom_contact_number?: string | null;
 };
 
-export type PatientInsuranceCoverage = {
-    id: number,
-    subscription_relation: string,
-    patient_id: number,
-    priority: number,
-    plan_id: number,
-    subscriber_num: string | null,
-    effective_date: string | null,
-    expiration_date: string | null,
-    plan: {
-        id: number,
-        payer_id: string | null,
-        name: string,
-        address: string | null,
-        address2: string | null,
-        city: string | null,
-        state: string | null,
-        zip_code: string | null,
-        country_code: string | null,
-        group_num: string,
-        employer_name: string | null,
-        foreign_id: string,
-        updated_at: string,
-        deleted_at: string | null
-    },
-    subscriber: {
-        id: number,
-        name: string,
-        date_of_birth: string
-    }
-};
-
 // Params
 
 export type GetPatientQueryParams = {
     subdomain: string;
+    include?: PatientInclude[];
 };
+
+export type PatientInclude = "upcoming_appts" | "procedures" | "insurance_coverages" | "adjustments" | "charges" | "payments" | "address";
 
 type BaseListPatientQueryParams = {
     subdomain: string;
