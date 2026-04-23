@@ -41,7 +41,7 @@ export type GetPatientParams = {
     subdomain: string;
 };
 
-export type ListPatientsParams = {
+type BaseListPatientParams = {
     subdomain: string;
     location_id: string;
     name?: string;
@@ -58,25 +58,11 @@ export type ListPatientsParams = {
     sort?: "name" | "-name" | "created_at" | "-created_at";
     appointment_date_start?: string;
     appointment_date_end?: string;
+};
+
+export type ListPatientsParams = BaseListPatientParams & {
     page: number;
     per_page: number;
 };
 
-export type ListAllPatientsParams = {
-    subdomain: string;
-    location_id: string;
-    name?: string;
-    email?: string;
-    phone_number?: string;
-    date_of_birth?: string;
-    inactive?: boolean;
-    foreign_id?: string;
-    updated_since?: string;
-    new_patient?: boolean;
-    non_patient?: boolean;
-    forms_syncable?: boolean;
-    location_strict?: boolean;
-    sort?: "name" | "-name" | "created_at" | "-created_at";
-    appointment_date_start?: string;
-    appointment_date_end?: string;
-};
+export type ListAllPatientsParams = BaseListPatientParams;

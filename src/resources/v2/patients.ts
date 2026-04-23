@@ -32,7 +32,7 @@ export function V2PatientsResource(request: RequestFunction) {
 
                 const response = await request<NexHealthApiResponse<{ patients: Patient[] }>>("patients", "GET", requestParams);
 
-                if (response.code && response.data) {
+                if (response.code) {
                     if (response.count && count === -1) {
                         count = response.count;
                     }

@@ -4,7 +4,7 @@ import { NexHealthClient } from '../dist/index.js';
 
 const nexhealth = new NexHealthClient(process.env.API_KEY);
 
-const response = await nexhealth.v2.patients.listAll({
+const response = await nexhealth.v2024.patients.listAll({
     subdomain: "nexhealthsmiles",
     location_id: "19617",
     name: "Ethan",
