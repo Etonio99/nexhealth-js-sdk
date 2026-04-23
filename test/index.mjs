@@ -4,10 +4,29 @@ import { NexHealthClient } from '../dist/index.js';
 
 const nexhealth = new NexHealthClient(process.env.API_KEY);
 
-const response = await nexhealth.v2024.patients.listAll({
+// const response = await nexhealth.v2024.patients.listAll({
+//     subdomain: "nexhealthsmiles",
+//     location_id: 19617,
+//     name: "Ethan",
+// });
+
+const response = await nexhealth.v2024.patients.create({
     subdomain: "nexhealthsmiles",
-    location_id: "19617",
-    name: "Ethan",
+    location_id: 19617,
+}, {
+    provider: {
+        provider_id: 142749488,
+    },
+    patient: {
+        first_name: "Ultra",
+        last_name: "Ethan",
+        email: "ultraethan@ethanisultra.ohyeah",
+        bio: {
+            date_of_birth: "2000-01-01",
+            phone_number: "0000000000",
+        }
+    },
+    return_existing_if_match: true,
 });
 
 console.log("RESPONSE:", response);

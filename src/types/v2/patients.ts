@@ -37,11 +37,11 @@ export type Bio = {
 
 // Params
 
-export type GetPatientParams = {
+export type GetPatientQueryParams = {
     subdomain: string;
 };
 
-type BaseListPatientParams = {
+type BaseListPatientQueryParams = {
     subdomain: string;
     location_id: string;
     name?: string;
@@ -60,9 +60,47 @@ type BaseListPatientParams = {
     appointment_date_end?: string;
 };
 
-export type ListPatientsParams = BaseListPatientParams & {
+export type ListPatientsQueryParams = BaseListPatientQueryParams & {
     page: number;
     per_page: number;
 };
 
-export type ListAllPatientsParams = BaseListPatientParams;
+export type ListAllPatientsQueryParams = BaseListPatientQueryParams;
+
+export type CreatePatientQueryParams = {
+    subdomain: string;
+    location_id: number;
+};
+
+export type CreatePatientBodyParams = {
+    provider: {
+        provider_id: number;
+    };
+    patient: {
+        first_name: string;
+        last_name: string;
+        email: string;
+        bio: BioBodyParams;
+    }
+};
+
+export type BioBodyParams = {
+    date_of_birth: string;
+    phone_number: string;
+    home_phone_number?: string;
+    cell_phone_number?: string;
+    work_phone_number?: string;
+    custom_contact_number?: string;
+    gender?: "Male" | "Female" | "Other";
+    weight?: number;
+    height?: number;
+    street_address?: string;
+    address_line_1?: string;
+    address_line_2?: string;
+    city?: string;
+    state?: string;
+    zip_code?: string;
+    insurance_name?: string;
+    ssn?: string;
+    race?: string;
+};

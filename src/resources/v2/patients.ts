@@ -1,8 +1,10 @@
 import type { NexHealthApiResponse } from "../../types/base.js";
 import type {
-    GetPatientParams,
-    ListAllPatientsParams,
-    ListPatientsParams,
+    CreatePatientBodyParams,
+    CreatePatientQueryParams,
+    GetPatientQueryParams,
+    ListAllPatientsQueryParams,
+    ListPatientsQueryParams,
     Patient,
 } from "../../types/v2/patients.js";
 
@@ -12,29 +14,33 @@ import { NexHealthAPIError } from "../../error.js";
 
 export function V2PatientsResource(request: RequestFunction) {
     return {
-        get: (patientId: number, params: GetPatientParams) => request<NexHealthApiResponse<Patient>>(`patients/${patientId}`, "GET", params),
-        list: (params: ListPatientsParams) => request<NexHealthApiResponse<{ patients: Patient[] }>>("patients", "GET", params),
-        listAll: async (params: ListAllPatientsParams): Promise<NexHealthApiResponse<{ patients: Patient[] }>> => {
+        create: (queryParams: CreatePatientQueryParams, bodyParams: CreatePatientBodyParams) => request<NexHealthApiResponse<{ user: Patient }>>("patients", "POST", queryParams, bodyParams),
+        get: (patientId: number, queryParams: GetPatientQueryParams) => request<NexHealthApiResponse<Patient>>(`patients/${patientId}`, "GET", queryParams),
+        list: (queryParams: ListPatientsQueryParams) => request<NexHealthApiResponse<{ patients: Patient[] }>>("patients", "GET", queryParams),
+        listAll: async (queryParams: ListAllPatientsQueryParams): Promise<NexHealthApiResponse<{ patients: Patient[] }>> => {
             let hasNextPage = true;
             const patients: Patient[] = [];
 
-            let count = -1;
+            let count = 0;
+            let setCount = false;
+            
             let currentPage = 0;
 
             while (hasNextPage) {
                 currentPage++;
 
-                const requestParams: ListPatientsParams = {
+                const requestParams: ListPatientsQueryParams = {
                     per_page: V2Constants.MAX_PER_PAGE,
                     page: currentPage,
-                    ...params,
+                    ...queryParams,
                 }
 
                 const response = await request<NexHealthApiResponse<{ patients: Patient[] }>>("patients", "GET", requestParams);
 
                 if (response.code) {
-                    if (response.count && count === -1) {
+                    if (response.count && !setCount) {
                         count = response.count;
+                        setCount = true;
                     }
 
                     if (response.data) {

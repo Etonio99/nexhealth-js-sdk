@@ -70,25 +70,29 @@ export class NexHealthClient {
             throw new NexHealthAPIError('Failed to authenticate');
         }
 
+        const finalHeaders: Record<string, string> = {
+            'Authorization': resolvedToken,
+            'accept': 'application/vnd.Nexhealth+json;version=2',
+            ...headers,
+        }
+
+        if (data) {
+            finalHeaders["content-type"] = "application/json";
+        }
+
         const response = await fetch(url, {
             method,
-            headers: {
-                'Authorization': resolvedToken,
-                'accept': 'application/vnd.Nexhealth+json;version=2',
-                ...headers,
-            },
+            headers: finalHeaders,
             body: data ? JSON.stringify(data) : null,
         });
 
-        if (!response.ok) {
-            const errorData = await response.json().catch(() => undefined);
-            throw new NexHealthAPIError(
-                `HTTP ${response.status}: ${response.statusText}`,
-                response.status,
-                errorData,
-            );
+        const parsed = await response.json();
+
+        if ('code' in parsed) {
+            return parsed as T;
         }
 
-        return response.json() as Promise<T>;
+        const responseText = await response.text();
+        throw new NexHealthAPIError('Unexpected response format from NexHealth API', response.status, responseText);
     }
 }
