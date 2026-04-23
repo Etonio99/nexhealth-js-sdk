@@ -75,6 +75,7 @@ type BaseListPatientQueryParams = {
     non_patient?: boolean;
     forms_syncable?: boolean;
     location_strict?: boolean;
+    // TODO: Add "Include"
 }
 
 export type ListPatientsQueryParams = BaseListPatientQueryParams & {

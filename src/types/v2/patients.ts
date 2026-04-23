@@ -76,6 +76,7 @@ type BaseListPatientQueryParams = {
     non_patient?: boolean;
     forms_syncable?: boolean;
     location_strict?: boolean;
+    include?: PatientInclude[];
     sort?: "name" | "-name" | "created_at" | "-created_at";
     appointment_date_start?: string;
     appointment_date_end?: string;
