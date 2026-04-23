@@ -56,7 +56,7 @@ export class NexHealthClient {
         return this.bearerToken;
     }
 
-    private async request<T>(endpoint: string, method: Method = 'GET', queryParams?: any, data?: any, headers?: Record<string, string>): Promise<T> {
+    private async request<T>(endpoint: string, method: Method = 'GET', queryParams?: any, bodyParams?: any, headers?: Record<string, string>): Promise<T> {
         const params = new URLSearchParams(queryParams);
         const url = `${this.baseURL}${endpoint}${queryParams ? `?${params.toString()}` : ""}`;
 
@@ -76,14 +76,14 @@ export class NexHealthClient {
             ...headers,
         }
 
-        if (data) {
+        if (bodyParams) {
             finalHeaders["content-type"] = "application/json";
         }
 
         const response = await fetch(url, {
             method,
             headers: finalHeaders,
-            body: data ? JSON.stringify(data) : null,
+            body: bodyParams ? JSON.stringify(bodyParams) : null,
         });
 
         const parsed = await response.json();
