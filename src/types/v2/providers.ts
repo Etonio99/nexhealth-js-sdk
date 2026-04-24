@@ -1,4 +1,5 @@
 import type { Availability } from './availability.js';
+import type { Location } from './locations.js';
 import type { Bio } from './patients.js';
 
 export type Provider = {

@@ -8,7 +8,7 @@ export type Procedure = {
   name: string;
   status: 'planned' | 'scheduled' | 'completed' | 'inactive' | 'referred';
   updated_at: string;
-  body_site: any;
+  body_site: unknown;
   fee: {
     amount: string;
     currency: string;

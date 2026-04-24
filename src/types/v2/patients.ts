@@ -22,7 +22,7 @@ export type Patient = {
   bio: Bio;
   inactive: boolean;
   last_sync_time: string | null;
-  guarantor_id: string | null;
+  guarantor_id: number | null;
   unsubscribe_sms: boolean;
   balance: {
     amount: string;
@@ -91,7 +91,8 @@ type BasePatientInclude =
   | 'payments'
   | 'address';
 export type GetPatientInclude =
-  | (BasePatientInclude & 'last_visited_appointment')
+  | BasePatientInclude
+  | 'last_visited_appointment'
   | 'children'
   | 'guarantor'
   | 'provider'

@@ -14,7 +14,7 @@ export type Patient = {
   inactive: boolean;
   last_sync_time: string | null;
   guarantor_id: string | null;
-  unsubscribe_sms?: string | null;
+  unsubscribe_sms?: boolean | null;
   billing_type: string | null;
   chart_id: string | null;
   preferred_language: string | null;
