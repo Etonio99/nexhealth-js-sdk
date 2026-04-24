@@ -12,7 +12,8 @@
   },
   "scripts": {
     "build": "tsup",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "lint:fix": "eslint . --fix && npx prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,13 @@
   },
   "homepage": "https://github.com/Etonio99/nexhealth-js-sdk#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.1",
+    "globals": "^17.5.0",
+    "jiti": "^2.6.1",
+    "prettier": "3.8.3",
     "tsup": "^8.5.1",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.0"
   }
 }

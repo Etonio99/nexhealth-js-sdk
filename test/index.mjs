@@ -4,11 +4,16 @@ import { NexHealthClient } from '../dist/index.js';
 
 const nexhealth = new NexHealthClient(process.env.API_KEY);
 
-// const response = await nexhealth.v2024.patients.listAll({
-//     subdomain: "nexhealthsmiles",
-//     location_id: 19617,
-//     name: "Ethan",
-// });
+const response = await nexhealth.v2.patients.listAll({
+  subdomain: 'nexhealthsmiles',
+  location_id: 19617,
+  name: 'Ethan',
+  include: ['address', 'insurance_coverages'],
+});
+
+response.data.patients.forEach((patient) => {
+  console.log(patient);
+});
 
 // const response = await nexhealth.v2024.patients.create({
 //     subdomain: "nexhealthsmiles",
@@ -29,8 +34,8 @@ const nexhealth = new NexHealthClient(process.env.API_KEY);
 //     return_existing_if_match: true,
 // });
 
-const response = await nexhealth.v2.patients.getInsuranceCoverages(264511006, {
-    subdomain: "nexhealthsmiles",
-})
+// const response = await nexhealth.v2.patients.getInsuranceCoverages(264511006, {
+//     subdomain: "nexhealthsmiles",
+// })
 
-console.log("RESPONSE:", response);
+console.log('RESPONSE:', response);

@@ -205,11 +205,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "patient",
-                  "provider",
-                  "procedure"
-                ]
+                "enum": ["patient", "provider", "procedure"]
               }
             }
           },
@@ -288,9 +284,7 @@
             }
           }
         },
-        "tags": [
-          "Adjustments"
-        ],
+        "tags": ["Adjustments"],
         "operationId": "getAdjustments"
       }
     },
@@ -317,11 +311,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "patient",
-                  "provider",
-                  "procedure"
-                ]
+                "enum": ["patient", "provider", "procedure"]
               }
             }
           }
@@ -378,9 +368,7 @@
             }
           }
         },
-        "tags": [
-          "Adjustments"
-        ],
+        "tags": ["Adjustments"],
         "operationId": "getAdjustmentsId"
       }
     },
@@ -417,9 +405,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "descriptors"
-                ]
+                "enum": ["descriptors"]
               }
             }
           }
@@ -486,9 +472,7 @@
             }
           }
         },
-        "tags": [
-          "Appointment Types"
-        ],
+        "tags": ["Appointment Types"],
         "operationId": "getAppointmentTypes"
       },
       "post": {
@@ -576,9 +560,7 @@
             }
           }
         },
-        "tags": [
-          "Appointment Types"
-        ],
+        "tags": ["Appointment Types"],
         "operationId": "postAppointmentTypes"
       }
     },
@@ -677,9 +659,7 @@
             }
           }
         },
-        "tags": [
-          "Appointment Types"
-        ],
+        "tags": ["Appointment Types"],
         "operationId": "patchAppointmentTypesId"
       },
       "get": {
@@ -723,9 +703,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "descriptors"
-                ]
+                "enum": ["descriptors"]
               }
             }
           }
@@ -792,9 +770,7 @@
             }
           }
         },
-        "tags": [
-          "Appointment Types"
-        ],
+        "tags": ["Appointment Types"],
         "operationId": "getAppointmentTypesId"
       },
       "delete": {
@@ -891,9 +867,7 @@
             }
           }
         },
-        "tags": [
-          "Appointment Types"
-        ],
+        "tags": ["Appointment Types"],
         "operationId": "deleteAppointmentTypesId"
       }
     },
@@ -1001,9 +975,7 @@
             }
           }
         },
-        "tags": [
-          "Appointment Types"
-        ],
+        "tags": ["Appointment Types"],
         "operationId": "getAppointmentTypesIdAppointmentDescriptors"
       }
     },
@@ -1049,9 +1021,7 @@
                   "operatory",
                   "appointment_type"
                 ],
-                "default": [
-                  "patient"
-                ]
+                "default": ["patient"]
               }
             }
           }
@@ -1118,9 +1088,7 @@
             }
           }
         },
-        "tags": [
-          "Appointments"
-        ],
+        "tags": ["Appointments"],
         "operationId": "getAppointmentsId"
       },
       "patch": {
@@ -1218,9 +1186,7 @@
             }
           }
         },
-        "tags": [
-          "Appointments"
-        ],
+        "tags": ["Appointments"],
         "operationId": "patchAppointmentsId"
       }
     },
@@ -1319,9 +1285,7 @@
             }
           }
         },
-        "tags": [
-          "Appointments"
-        ],
+        "tags": ["Appointments"],
         "operationId": "getAppointmentsIdAppointmentDescriptors"
       }
     },
@@ -1502,9 +1466,7 @@
                   "operatory",
                   "appointment_type"
                 ],
-                "default": [
-                  "patient"
-                ]
+                "default": ["patient"]
               }
             }
           },
@@ -1593,9 +1555,7 @@
             }
           }
         },
-        "tags": [
-          "Appointments"
-        ],
+        "tags": ["Appointments"],
         "operationId": "getAppointments"
       },
       "post": {
@@ -1703,9 +1663,7 @@
             }
           }
         },
-        "tags": [
-          "Appointments"
-        ],
+        "tags": ["Appointments"],
         "operationId": "postAppointments"
       }
     },
@@ -1877,9 +1835,7 @@
             }
           }
         },
-        "tags": [
-          "Appointment Slots"
-        ],
+        "tags": ["Appointment Slots"],
         "operationId": "getAppointmentSlots"
       }
     },
@@ -1918,9 +1874,7 @@
             }
           }
         },
-        "tags": [
-          "Authenticates"
-        ],
+        "tags": ["Authenticates"],
         "operationId": "postAuthenticates"
       }
     },
@@ -2020,9 +1974,7 @@
             }
           }
         },
-        "tags": [
-          "Availabilities"
-        ],
+        "tags": ["Availabilities"],
         "operationId": "postAvailabilities"
       },
       "get": {
@@ -2079,9 +2031,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "appointment_types"
-                ]
+                "enum": ["appointment_types"]
               }
             }
           },
@@ -2188,9 +2138,7 @@
             }
           }
         },
-        "tags": [
-          "Availabilities"
-        ],
+        "tags": ["Availabilities"],
         "operationId": "getAvailabilities"
       }
     },
@@ -2227,9 +2175,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "appointment_types"
-                ]
+                "enum": ["appointment_types"]
               }
             }
           }
@@ -2296,9 +2242,7 @@
             }
           }
         },
-        "tags": [
-          "Availabilities"
-        ],
+        "tags": ["Availabilities"],
         "operationId": "getAvailabilitiesId"
       },
       "patch": {
@@ -2396,9 +2340,7 @@
             }
           }
         },
-        "tags": [
-          "Availabilities"
-        ],
+        "tags": ["Availabilities"],
         "operationId": "patchAvailabilitiesId"
       },
       "delete": {
@@ -2469,9 +2411,7 @@
             }
           }
         },
-        "tags": [
-          "Availabilities"
-        ],
+        "tags": ["Availabilities"],
         "operationId": "deleteAvailabilitiesId"
       }
     },
@@ -2538,11 +2478,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "patient",
-                  "provider",
-                  "procedure"
-                ]
+                "enum": ["patient", "provider", "procedure"]
               }
             }
           },
@@ -2621,9 +2557,7 @@
             }
           }
         },
-        "tags": [
-          "Charges"
-        ],
+        "tags": ["Charges"],
         "operationId": "getCharges"
       }
     },
@@ -2650,11 +2584,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "patient",
-                  "provider",
-                  "procedure"
-                ]
+                "enum": ["patient", "provider", "procedure"]
               }
             }
           }
@@ -2711,9 +2641,7 @@
             }
           }
         },
-        "tags": [
-          "Charges"
-        ],
+        "tags": ["Charges"],
         "operationId": "getChargesId"
       }
     },
@@ -2783,12 +2711,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "read",
-                  "unread",
-                  "visible",
-                  "hidden"
-                ]
+                "enum": ["read", "unread", "visible", "hidden"]
               }
             }
           },
@@ -2865,9 +2788,7 @@
             }
           }
         },
-        "tags": [
-          "Conversations"
-        ],
+        "tags": ["Conversations"],
         "operationId": "getConversations"
       },
       "post": {
@@ -2965,9 +2886,7 @@
             }
           }
         },
-        "tags": [
-          "Conversations"
-        ],
+        "tags": ["Conversations"],
         "operationId": "postConversations"
       }
     },
@@ -2996,11 +2915,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "messages",
-                  "participants",
-                  "unread_at"
-                ]
+                "enum": ["messages", "participants", "unread_at"]
               }
             }
           },
@@ -3011,9 +2926,7 @@
             "required": false,
             "schema": {
               "type": "string",
-              "enum": [
-                "read"
-              ]
+              "enum": ["read"]
             }
           },
           {
@@ -3088,9 +3001,7 @@
             }
           }
         },
-        "tags": [
-          "Conversations"
-        ],
+        "tags": ["Conversations"],
         "operationId": "getConversationsId"
       },
       "patch": {
@@ -3188,9 +3099,7 @@
             }
           }
         },
-        "tags": [
-          "Conversations"
-        ],
+        "tags": ["Conversations"],
         "operationId": "patchConversationsId"
       }
     },
@@ -3301,9 +3210,7 @@
             }
           }
         },
-        "tags": [
-          "Conversations"
-        ],
+        "tags": ["Conversations"],
         "operationId": "getConversationsIdMessages"
       },
       "post": {
@@ -3400,9 +3307,7 @@
             }
           }
         },
-        "tags": [
-          "Conversations"
-        ],
+        "tags": ["Conversations"],
         "operationId": "postConversationsIdMessages"
       }
     },
@@ -3502,9 +3407,7 @@
             }
           }
         },
-        "tags": [
-          "Document Types"
-        ],
+        "tags": ["Document Types"],
         "operationId": "getDocumentTypes"
       }
     },
@@ -3604,9 +3507,7 @@
             }
           }
         },
-        "tags": [
-          "Document Types"
-        ],
+        "tags": ["Document Types"],
         "operationId": "getDocumentTypesId"
       }
     },
@@ -3739,9 +3640,7 @@
             }
           }
         },
-        "tags": [
-          "Forms"
-        ],
+        "tags": ["Forms"],
         "operationId": "postFormsRequests",
         "x-nex": {
           "supported_ehrs": [
@@ -3798,9 +3697,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "documents"
-                ]
+                "enum": ["documents"]
               }
             }
           }
@@ -3867,9 +3764,7 @@
             }
           }
         },
-        "tags": [
-          "Forms"
-        ],
+        "tags": ["Forms"],
         "operationId": "getFormsRequestsId",
         "x-nex": {
           "supported_ehrs": [
@@ -3920,9 +3815,7 @@
             }
           }
         },
-        "tags": [
-          "Institutions"
-        ],
+        "tags": ["Institutions"],
         "operationId": "getInstitutions"
       }
     },
@@ -3993,9 +3886,7 @@
             }
           }
         },
-        "tags": [
-          "Institutions"
-        ],
+        "tags": ["Institutions"],
         "operationId": "getInstitutionsId"
       }
     },
@@ -4044,10 +3935,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "patient_coverages",
-                  "subscribers"
-                ]
+                "enum": ["patient_coverages", "subscribers"]
               }
             }
           },
@@ -4122,9 +4010,7 @@
             }
           }
         },
-        "tags": [
-          "Insurance Plans"
-        ],
+        "tags": ["Insurance Plans"],
         "operationId": "getInsurancePlans"
       }
     },
@@ -4161,10 +4047,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "patient_coverages",
-                  "subscribers"
-                ]
+                "enum": ["patient_coverages", "subscribers"]
               }
             }
           }
@@ -4231,9 +4114,7 @@
             }
           }
         },
-        "tags": [
-          "Insurance Plans"
-        ],
+        "tags": ["Insurance Plans"],
         "operationId": "getInsurancePlansId"
       }
     },
@@ -4344,9 +4225,7 @@
             }
           }
         },
-        "tags": [
-          "Locations"
-        ],
+        "tags": ["Locations"],
         "operationId": "getLocations"
       }
     },
@@ -4417,9 +4296,7 @@
             }
           }
         },
-        "tags": [
-          "Locations"
-        ],
+        "tags": ["Locations"],
         "operationId": "getLocationsId"
       }
     },
@@ -4499,9 +4376,7 @@
             }
           }
         },
-        "tags": [
-          "Locations"
-        ],
+        "tags": ["Locations"],
         "operationId": "getLocationsIdAppointmentDescriptors"
       }
     },
@@ -4616,9 +4491,7 @@
             }
           }
         },
-        "tags": [
-          "Nex Staff"
-        ],
+        "tags": ["Nex Staff"],
         "operationId": "getNexStaff"
       }
     },
@@ -4705,13 +4578,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "appointment_types",
-                  "appt_categories"
-                ],
-                "default": [
-                  "appt_categories"
-                ]
+                "enum": ["appointment_types", "appt_categories"],
+                "default": ["appt_categories"]
               }
             }
           }
@@ -4778,9 +4646,7 @@
             }
           }
         },
-        "tags": [
-          "Operatories"
-        ],
+        "tags": ["Operatories"],
         "operationId": "getOperatories"
       }
     },
@@ -4817,13 +4683,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "appointment_types",
-                  "appt_categories"
-                ],
-                "default": [
-                  "appt_categories"
-                ]
+                "enum": ["appointment_types", "appt_categories"],
+                "default": ["appt_categories"]
               }
             }
           }
@@ -4890,9 +4751,7 @@
             }
           }
         },
-        "tags": [
-          "Operatories"
-        ],
+        "tags": ["Operatories"],
         "operationId": "getOperatoriesId"
       }
     },
@@ -5157,9 +5016,7 @@
             }
           }
         },
-        "tags": [
-          "Patients"
-        ],
+        "tags": ["Patients"],
         "operationId": "getPatients"
       },
       "post": {
@@ -5257,9 +5114,7 @@
             }
           }
         },
-        "tags": [
-          "Patients"
-        ],
+        "tags": ["Patients"],
         "operationId": "postPatients"
       }
     },
@@ -5376,9 +5231,7 @@
             }
           }
         },
-        "tags": [
-          "Patients"
-        ],
+        "tags": ["Patients"],
         "operationId": "getPatientsId"
       }
     },
@@ -5468,9 +5321,7 @@
             }
           }
         },
-        "tags": [
-          "Patient Documents"
-        ],
+        "tags": ["Patient Documents"],
         "operationId": "getPatientsIdDocuments"
       },
       "post": {
@@ -5523,9 +5374,7 @@
                     "format": "int32"
                   }
                 },
-                "required": [
-                  "file"
-                ]
+                "required": ["file"]
               }
             }
           },
@@ -5593,9 +5442,7 @@
             }
           }
         },
-        "tags": [
-          "Patient Documents"
-        ],
+        "tags": ["Patient Documents"],
         "operationId": "postPatientsIdDocuments"
       }
     },
@@ -5707,9 +5554,7 @@
             }
           }
         },
-        "tags": [
-          "Patients"
-        ],
+        "tags": ["Patients"],
         "operationId": "getPatientsIdInsuranceCoverages"
       }
     },
@@ -5809,9 +5654,7 @@
             }
           }
         },
-        "tags": [
-          "Patient Alerts"
-        ],
+        "tags": ["Patient Alerts"],
         "operationId": "postPatientsIdAlerts"
       },
       "get": {
@@ -5908,9 +5751,7 @@
             }
           }
         },
-        "tags": [
-          "Patient Alerts"
-        ],
+        "tags": ["Patient Alerts"],
         "operationId": "getPatientsIdAlerts"
       }
     },
@@ -6009,9 +5850,7 @@
             }
           }
         },
-        "tags": [
-          "Patient Alerts"
-        ],
+        "tags": ["Patient Alerts"],
         "operationId": "getPatientsIdAlertsAlertId"
       },
       "patch": {
@@ -6118,9 +5957,7 @@
             }
           }
         },
-        "tags": [
-          "Patient Alerts"
-        ],
+        "tags": ["Patient Alerts"],
         "operationId": "patchPatientsIdAlertsAlertId"
       }
     },
@@ -6291,9 +6128,7 @@
             }
           }
         },
-        "tags": [
-          "Patient Recalls"
-        ],
+        "tags": ["Patient Recalls"],
         "operationId": "getPatientRecalls"
       }
     },
@@ -6382,9 +6217,7 @@
             }
           }
         },
-        "tags": [
-          "Patient Recalls"
-        ],
+        "tags": ["Patient Recalls"],
         "operationId": "getPatientRecallsId"
       }
     },
@@ -6533,9 +6366,7 @@
             }
           }
         },
-        "tags": [
-          "Payment Plans"
-        ],
+        "tags": ["Payment Plans"],
         "operationId": "getPaymentPlans"
       }
     },
@@ -6562,10 +6393,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "patient",
-                  "guarantor"
-                ]
+                "enum": ["patient", "guarantor"]
               }
             }
           }
@@ -6622,9 +6450,7 @@
             }
           }
         },
-        "tags": [
-          "Payment Plans"
-        ],
+        "tags": ["Payment Plans"],
         "operationId": "getPaymentPlansId"
       }
     },
@@ -6691,11 +6517,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "patient",
-                  "provider",
-                  "procedure"
-                ]
+                "enum": ["patient", "provider", "procedure"]
               }
             }
           },
@@ -6774,9 +6596,7 @@
             }
           }
         },
-        "tags": [
-          "Payments"
-        ],
+        "tags": ["Payments"],
         "operationId": "getPayments"
       }
     },
@@ -6803,11 +6623,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "patient",
-                  "provider",
-                  "procedure"
-                ]
+                "enum": ["patient", "provider", "procedure"]
               }
             }
           }
@@ -6864,9 +6680,7 @@
             }
           }
         },
-        "tags": [
-          "Payments"
-        ],
+        "tags": ["Payments"],
         "operationId": "getPaymentsId"
       }
     },
@@ -7018,9 +6832,7 @@
             }
           }
         },
-        "tags": [
-          "Procedures"
-        ],
+        "tags": ["Procedures"],
         "operationId": "getProcedures"
       }
     },
@@ -7069,14 +6881,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "locations",
-                  "availabilities",
-                  "appointment_types"
-                ],
-                "default": [
-                  "locations"
-                ]
+                "enum": ["locations", "availabilities", "appointment_types"],
+                "default": ["locations"]
               }
             }
           },
@@ -7206,9 +7012,7 @@
             }
           }
         },
-        "tags": [
-          "Providers"
-        ],
+        "tags": ["Providers"],
         "operationId": "getProviders"
       }
     },
@@ -7245,14 +7049,8 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "locations",
-                  "availabilities",
-                  "appointment_types"
-                ],
-                "default": [
-                  "locations"
-                ]
+                "enum": ["locations", "availabilities", "appointment_types"],
+                "default": ["locations"]
               }
             }
           }
@@ -7319,9 +7117,7 @@
             }
           }
         },
-        "tags": [
-          "Providers"
-        ],
+        "tags": ["Providers"],
         "operationId": "getProvidersId"
       }
     },
@@ -7430,9 +7226,7 @@
             }
           }
         },
-        "tags": [
-          "Recall Types"
-        ],
+        "tags": ["Recall Types"],
         "operationId": "getRecallTypes"
       }
     },
@@ -7521,9 +7315,7 @@
             }
           }
         },
-        "tags": [
-          "Recall Types"
-        ],
+        "tags": ["Recall Types"],
         "operationId": "getRecallTypesId"
       }
     },
@@ -7561,10 +7353,7 @@
             "required": false,
             "schema": {
               "type": "string",
-              "enum": [
-                "green",
-                "red"
-              ]
+              "enum": ["green", "red"]
             }
           },
           {
@@ -7574,10 +7363,7 @@
             "required": false,
             "schema": {
               "type": "string",
-              "enum": [
-                "green",
-                "red"
-              ]
+              "enum": ["green", "red"]
             }
           }
         ],
@@ -7633,9 +7419,7 @@
             }
           }
         },
-        "tags": [
-          "Sync Status"
-        ],
+        "tags": ["Sync Status"],
         "operationId": "getSyncStatus"
       }
     },
@@ -7695,9 +7479,7 @@
             }
           }
         },
-        "tags": [
-          "Webhook Endpoints"
-        ],
+        "tags": ["Webhook Endpoints"],
         "operationId": "getWebhookEndpoints"
       },
       "post": {
@@ -7754,9 +7536,7 @@
             }
           }
         },
-        "tags": [
-          "Webhook Endpoints"
-        ],
+        "tags": ["Webhook Endpoints"],
         "operationId": "postWebhookEndpoints"
       }
     },
@@ -7837,9 +7617,7 @@
             }
           }
         },
-        "tags": [
-          "Webhook Endpoints"
-        ],
+        "tags": ["Webhook Endpoints"],
         "operationId": "patchWebhookEndpointsId"
       },
       "delete": {
@@ -7891,9 +7669,7 @@
             }
           }
         },
-        "tags": [
-          "Webhook Endpoints"
-        ],
+        "tags": ["Webhook Endpoints"],
         "operationId": "deleteWebhookEndpointsId"
       }
     },
@@ -8028,9 +7804,7 @@
             }
           }
         },
-        "tags": [
-          "Webhook Subscriptions"
-        ],
+        "tags": ["Webhook Subscriptions"],
         "operationId": "getWebhookEndpointsIdWebhookSubscriptions"
       },
       "post": {
@@ -8128,9 +7902,7 @@
             }
           }
         },
-        "tags": [
-          "Webhook Subscriptions"
-        ],
+        "tags": ["Webhook Subscriptions"],
         "operationId": "postWebhookEndpointsIdWebhookSubscriptions"
       }
     },
@@ -8231,9 +8003,7 @@
             }
           }
         },
-        "tags": [
-          "Webhook Subscriptions"
-        ],
+        "tags": ["Webhook Subscriptions"],
         "operationId": "patchWebhookEndpointsIdWebhookSubscriptionsSubscriptionId"
       },
       "delete": {
@@ -8315,9 +8085,7 @@
             }
           }
         },
-        "tags": [
-          "Webhook Subscriptions"
-        ],
+        "tags": ["Webhook Subscriptions"],
         "operationId": "deleteWebhookEndpointsIdWebhookSubscriptionsSubscriptionId"
       }
     }
@@ -8423,10 +8191,7 @@
           },
           "directionality": {
             "type": "string",
-            "enum": [
-              "credit",
-              "debit"
-            ],
+            "enum": ["credit", "debit"],
             "example": "credit",
             "description": "The direction that this item's value applies to the patient's overall balance.\n\nWith respect to the patient, adjustments can subtract from the overall balance (credits) or add to the overall balance (debits).\n"
           }
@@ -9028,9 +8793,7 @@
           },
           "data": {
             "type": "object",
-            "example": {
-
-            },
+            "example": {},
             "description": "The configuration object, structure depends on the underlying EMR"
           },
           "active": {
@@ -9105,10 +8868,7 @@
               "parent_type": {
                 "type": "string",
                 "description": "Parent model to scope appointment types to, defaults to Institution",
-                "enum": [
-                  "Institution",
-                  "Location"
-                ]
+                "enum": ["Institution", "Location"]
               },
               "parent_id": {
                 "type": "integer",
@@ -9130,9 +8890,7 @@
             }
           }
         },
-        "required": [
-          "appointment_type"
-        ],
+        "required": ["appointment_type"],
         "description": "Create an appointment type"
       },
       "API_V2_Entities_AppointmentTypeBasic_Response": {
@@ -9229,10 +8987,7 @@
               "parent_type": {
                 "type": "string",
                 "description": "Parent model to scope appointment types to, defaults to Institution",
-                "enum": [
-                  "Institution",
-                  "Location"
-                ]
+                "enum": ["Institution", "Location"]
               },
               "parent_id": {
                 "type": "integer",
@@ -9254,9 +9009,7 @@
             }
           }
         },
-        "required": [
-          "appointment_type"
-        ],
+        "required": ["appointment_type"],
         "description": "Edit an appointment type"
       },
       "API_V2_Entities_AppointmentTypeWithResources_Response": {
@@ -9909,10 +9662,7 @@
           },
           "campaign_medium": {
             "type": "string",
-            "enum": [
-              "email",
-              "sms"
-            ],
+            "enum": ["email", "sms"],
             "example": "sms",
             "description": "Indicates which medium contained the online booking link the user clicked on"
           },
@@ -9941,9 +9691,7 @@
             }
           }
         },
-        "required": [
-          "appt"
-        ],
+        "required": ["appt"],
         "description": "Edit Appointment"
       },
       "API_V2_Entities_AppointmentResponse_Response": {
@@ -10307,23 +10055,13 @@
                       "gender": {
                         "type": "string",
                         "description": "Patient gender. Gender will be  default to Female if not provided",
-                        "enum": [
-                          "Male",
-                          "Female",
-                          "Other"
-                        ]
+                        "enum": ["Male", "Female", "Other"]
                       }
                     },
-                    "required": [
-                      "date_of_birth"
-                    ]
+                    "required": ["date_of_birth"]
                   }
                 },
-                "required": [
-                  "first_name",
-                  "last_name",
-                  "bio"
-                ]
+                "required": ["first_name", "last_name", "bio"]
               },
               "descriptor_ids": {
                 "type": "array",
@@ -10334,16 +10072,10 @@
                 }
               }
             },
-            "required": [
-              "patient_id",
-              "provider_id",
-              "start_time"
-            ]
+            "required": ["patient_id", "provider_id", "start_time"]
           }
         },
-        "required": [
-          "appt"
-        ],
+        "required": ["appt"],
         "description": "Create appointment"
       },
       "API_Entities_AvailableSlotResponse_Collection_Response": {
@@ -10561,19 +10293,10 @@
                   "unit": {
                     "type": "string",
                     "description": "Every # days/weeks/months",
-                    "enum": [
-                      "",
-                      "day",
-                      "week",
-                      "month"
-                    ]
+                    "enum": ["", "day", "week", "month"]
                   }
                 },
-                "required": [
-                  "num",
-                  "ref",
-                  "unit"
-                ]
+                "required": ["num", "ref", "unit"]
               },
               "active": {
                 "type": "boolean",
@@ -10581,16 +10304,10 @@
                 "default": true
               }
             },
-            "required": [
-              "provider_id",
-              "begin_time",
-              "end_time"
-            ]
+            "required": ["provider_id", "begin_time", "end_time"]
           }
         },
-        "required": [
-          "availability"
-        ],
+        "required": ["availability"],
         "description": "Create availability"
       },
       "API_V2_Entities_WorkingHourBasic_Response": {
@@ -10668,13 +10385,7 @@
             "items": {
               "type": "string"
             },
-            "example": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
+            "example": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "description": "Configured week days"
           },
           "specific_date": {
@@ -10787,13 +10498,7 @@
             "items": {
               "type": "string"
             },
-            "example": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
+            "example": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "description": "Configured week days"
           },
           "specific_date": {
@@ -10942,18 +10647,10 @@
                   "unit": {
                     "type": "string",
                     "description": "Every # days/weeks/months",
-                    "enum": [
-                      "day",
-                      "week",
-                      "month"
-                    ]
+                    "enum": ["day", "week", "month"]
                   }
                 },
-                "required": [
-                  "num",
-                  "ref",
-                  "unit"
-                ]
+                "required": ["num", "ref", "unit"]
               },
               "active": {
                 "type": "boolean",
@@ -10962,9 +10659,7 @@
             }
           }
         },
-        "required": [
-          "availability"
-        ],
+        "required": ["availability"],
         "description": "Edit availability"
       },
       "API_V2_Entities_Ledger_Charge_Collection_Response": {
@@ -11209,11 +10904,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "icon",
-              "image",
-              "text"
-            ],
+            "enum": ["icon", "image", "text"],
             "description": "The type of avatar to display."
           },
           "value": {
@@ -11250,13 +10941,7 @@
           },
           "delivery_status": {
             "type": "string",
-            "enum": [
-              "queued",
-              "sent",
-              "failed",
-              "delivered",
-              "undelivered"
-            ],
+            "enum": ["queued", "sent", "failed", "delivered", "undelivered"],
             "example": "delivered",
             "description": "Delivery status"
           },
@@ -11286,10 +10971,7 @@
           },
           "user_type": {
             "type": "string",
-            "enum": [
-              "Patient",
-              "Staff"
-            ],
+            "enum": ["Patient", "Staff"],
             "description": "The type of user that sent the message. May be null if the message was not sent by a person."
           },
           "avatar": {
@@ -11313,10 +10995,7 @@
           },
           "user_type": {
             "type": "string",
-            "enum": [
-              "Patient",
-              "Staff"
-            ],
+            "enum": ["Patient", "Staff"],
             "description": "The type of user that received the message. May be null if the message was not received by a person."
           },
           "avatar": {
@@ -11403,9 +11082,7 @@
             "description": "The phone number of the patient that should receive the message"
           }
         },
-        "required": [
-          "content"
-        ],
+        "required": ["content"],
         "description": "Create conversation"
       },
       "API_V2_Entities_Conversation_Response": {
@@ -11451,10 +11128,7 @@
           "mark_as": {
             "type": "string",
             "description": "mark messages as read or unread",
-            "enum": [
-              "read",
-              "unread"
-            ]
+            "enum": ["read", "unread"]
           }
         },
         "description": "Update Conversation"
@@ -11519,13 +11193,7 @@
           },
           "delivery_status": {
             "type": "string",
-            "enum": [
-              "queued",
-              "sent",
-              "failed",
-              "delivered",
-              "undelivered"
-            ],
+            "enum": ["queued", "sent", "failed", "delivered", "undelivered"],
             "example": "delivered",
             "description": "Delivery status"
           },
@@ -11613,9 +11281,7 @@
             "description": "The NexHealth id of the patient that should receive the message"
           }
         },
-        "required": [
-          "content"
-        ],
+        "required": ["content"],
         "description": "Post Message"
       },
       "API_V2_Entities_ConversationMessage_Response": {
@@ -11792,9 +11458,7 @@
             "items": {
               "type": "string"
             },
-            "example": [
-              "ee0913ee13af4e0aa4df2af1738d43d6"
-            ],
+            "example": ["ee0913ee13af4e0aa4df2af1738d43d6"],
             "description": "The ids of the forms associated with the request"
           },
           "request_status": {
@@ -11933,9 +11597,7 @@
             "items": {
               "type": "string"
             },
-            "example": [
-              "ee0913ee13af4e0aa4df2af1738d43d6"
-            ],
+            "example": ["ee0913ee13af4e0aa4df2af1738d43d6"],
             "description": "The ids of the forms associated with the request"
           },
           "request_status": {
@@ -12069,10 +11731,7 @@
             "items": {
               "type": "string"
             },
-            "example": [
-              "dentrix",
-              "curve2"
-            ],
+            "example": ["dentrix", "curve2"],
             "description": "Array of strings of EMRs used by this institution"
           },
           "country_code": {
@@ -13472,10 +13131,7 @@
           },
           "directionality": {
             "type": "string",
-            "enum": [
-              "credit",
-              "debit"
-            ],
+            "enum": ["credit", "debit"],
             "example": "credit",
             "description": "The direction that this item's value applies to the patient's overall balance.\n\nWith respect to the patient, adjustments can subtract from the overall balance (credits) or add to the overall balance (debits).\n"
           }
@@ -13605,9 +13261,7 @@
                 "description": "Id of the provider with which to intake this new patient"
               }
             },
-            "required": [
-              "provider_id"
-            ]
+            "required": ["provider_id"]
           },
           "patient": {
             "type": "object",
@@ -13656,11 +13310,7 @@
                   "gender": {
                     "type": "string",
                     "description": "Patient gender. Gender will be  default to Female if not provided. This is to ensure compatibility with all EHRs. This will be updated when the patient visits the office and updates their info",
-                    "enum": [
-                      "Male",
-                      "Female",
-                      "Other"
-                    ]
+                    "enum": ["Male", "Female", "Other"]
                   },
                   "weight": {
                     "type": "integer",
@@ -13709,24 +13359,13 @@
                     "description": "Patient race"
                   }
                 },
-                "required": [
-                  "date_of_birth",
-                  "phone_number"
-                ]
+                "required": ["date_of_birth", "phone_number"]
               }
             },
-            "required": [
-              "first_name",
-              "last_name",
-              "email",
-              "bio"
-            ]
+            "required": ["first_name", "last_name", "email", "bio"]
           }
         },
-        "required": [
-          "provider",
-          "patient"
-        ],
+        "required": ["provider", "patient"],
         "description": "Create patient"
       },
       "API_V2_Entities_PatientsResponses_Create_Response": {
@@ -14203,14 +13842,10 @@
                 "description": "The note for the patient alert"
               }
             },
-            "required": [
-              "note"
-            ]
+            "required": ["note"]
           }
         },
-        "required": [
-          "patient_alert"
-        ],
+        "required": ["patient_alert"],
         "description": "Create patient alert"
       },
       "API_V2_Entities_PatientAlert_Response": {
@@ -14296,9 +13931,7 @@
             }
           }
         },
-        "required": [
-          "patient_alert"
-        ],
+        "required": ["patient_alert"],
         "description": "Edit patient alert"
       },
       "API_V2_Entities_PatientRecall_Collection_Response": {
@@ -14969,13 +14602,7 @@
             "items": {
               "type": "string"
             },
-            "example": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
+            "example": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "description": "Configured week days"
           },
           "specific_date": {
@@ -15239,10 +14866,7 @@
           },
           "read_status": {
             "type": "string",
-            "enum": [
-              "green",
-              "red"
-            ],
+            "enum": ["green", "red"],
             "example": "green",
             "description": "Status of the read service, where green means up, red means down"
           },
@@ -15254,10 +14878,7 @@
           },
           "write_status": {
             "type": "string",
-            "enum": [
-              "green",
-              "red"
-            ],
+            "enum": ["green", "red"],
             "example": "red",
             "description": "Status of the write service, where green means up, red means down"
           },
@@ -15297,10 +14918,7 @@
           },
           "type": {
             "type": "string",
-            "example": [
-              "cloud",
-              "onprem"
-            ],
+            "example": ["cloud", "onprem"],
             "description": "Type of EMR. Can be cloud or onprem."
           }
         }
@@ -15391,9 +15009,7 @@
             "description": "Return only active or inactive endpoints"
           }
         },
-        "required": [
-          "target_url"
-        ],
+        "required": ["target_url"],
         "description": "Create webhook endpoint"
       },
       "API_V2_Entities_WebhookEndpoint_Response": {
@@ -15575,10 +15191,7 @@
             "example": true
           }
         },
-        "required": [
-          "resource_type",
-          "event"
-        ],
+        "required": ["resource_type", "event"],
         "description": "Create webhook subscription"
       },
       "API_V2_Entities_WebhookSubscription_Response": {

@@ -1,3 +1,3 @@
 export type AuthenticatesData = {
-    token: string;
-}
+  token: string;
+};
