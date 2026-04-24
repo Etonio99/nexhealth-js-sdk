@@ -2,6 +2,7 @@
 
 import { NexHealthClient } from '../dist/index.js';
 
+// eslint-disable-next-line no-undef
 const nexhealth = new NexHealthClient(process.env.API_KEY);
 
 const response = await nexhealth.v2.patients.listAll({

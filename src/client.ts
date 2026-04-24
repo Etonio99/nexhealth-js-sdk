@@ -58,7 +58,7 @@ export class NexHealthClient {
     return this.bearerToken;
   }
 
-  private buildQueryString(params: Record<string, any>): string {
+  private buildQueryString(params: Record<string, unknown>): string {
     const searchParams = new URLSearchParams();
     for (const [key, value] of Object.entries(params)) {
       if (Array.isArray(value)) {
@@ -75,11 +75,11 @@ export class NexHealthClient {
   private async request<T>(
     endpoint: string,
     method: Method = 'GET',
-    queryParams?: any,
-    bodyParams?: any,
+    queryParams?: unknown,
+    bodyParams?: unknown,
     headers?: Record<string, string>
   ): Promise<T> {
-    const url = `${this.baseURL}${endpoint}${queryParams ? `?${this.buildQueryString(queryParams)}` : ''}`;
+    const url = `${this.baseURL}${endpoint}${queryParams ? `?${this.buildQueryString(queryParams as Record<string, unknown>)}` : ''}`;
 
     const resolveToken = async (): Promise<string | null> => {
       const bearerToken = await this.getBearerToken();
