@@ -33,3 +33,31 @@ export type Location = {
   wlogo: string | null;
   weight: number | null;
 };
+
+// PARAMS
+
+export type ListLocationsQueryParams = {
+  subdomain?: string;
+  inactive?: boolean;
+  foreign_id?: string;
+  filter_by_subscription_feature?: SubscriptionFeature;
+};
+
+export enum SubscriptionFeature {
+  messaging,
+  campaigns,
+  reviews,
+  recalls,
+  reminders,
+  online_booking,
+  waitlist,
+  forms,
+  payments,
+  ledger_sync,
+  enterprise,
+  insurance_verification,
+}
+
+export type ListLocationAppointmentDescriptors = {
+  descriptor_type?: string;
+};

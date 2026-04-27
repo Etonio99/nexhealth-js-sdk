@@ -5,11 +5,8 @@ import { NexHealthClient } from '../dist/index.js';
 // eslint-disable-next-line no-undef
 const nexhealth = new NexHealthClient(process.env.API_KEY);
 
-const response = await nexhealth.v2.appointments.list({
+const response = await nexhealth.v2.locations.list({
   subdomain: 'nexhealthsmiles',
-  location_id: 19617,
-  start: '2026-04-01T00:00:00',
-  end: '2026-04-30T00:00:00',
 });
 
 // const response = await nexhealth.v2.patients.listAll({
