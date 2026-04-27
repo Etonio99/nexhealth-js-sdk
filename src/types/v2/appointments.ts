@@ -86,6 +86,27 @@ export type GetAppointmentQueryParams = {
   include?: AppointmentInclude[];
 };
 
+export type ListAppointmentQueryParams = {
+  subdomain: string;
+  location_id: number;
+  start: string;
+  end: string;
+  timezone?: string;
+  cancelled?: boolean;
+  unavailable?: boolean;
+  nex_only?: boolean;
+  updated_since?: string;
+  appointment_type_id?: number;
+  foreign_id?: string;
+  patient_id?: number;
+  provider_ids?: number[];
+  operatory_ids?: number[];
+  created_by?: number;
+  include?: AppointmentInclude[];
+  page?: number;
+  per_page?: number;
+};
+
 export type AppointmentInclude =
   | 'patient'
   | 'guarantor'

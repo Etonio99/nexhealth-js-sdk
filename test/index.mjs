@@ -5,16 +5,23 @@ import { NexHealthClient } from '../dist/index.js';
 // eslint-disable-next-line no-undef
 const nexhealth = new NexHealthClient(process.env.API_KEY);
 
-const response = await nexhealth.v2.patients.listAll({
+const response = await nexhealth.v2.appointments.list({
   subdomain: 'nexhealthsmiles',
   location_id: 19617,
-  name: 'Ethan',
-  include: ['address', 'insurance_coverages'],
+  start: '2026-04-01T00:00:00',
+  end: '2026-04-30T00:00:00',
 });
 
-response.data.patients.forEach((patient) => {
-  console.log(patient);
-});
+// const response = await nexhealth.v2.patients.listAll({
+//   subdomain: 'nexhealthsmiles',
+//   location_id: 19617,
+//   name: 'Ethan',
+//   include: ['address', 'insurance_coverages'],
+// });
+
+// response.data.patients.forEach((patient) => {
+//   console.log(patient);
+// });
 
 // const response = await nexhealth.v2024.patients.create({
 //     subdomain: "nexhealthsmiles",

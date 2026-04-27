@@ -1,0 +1,23 @@
+export type Institution = {
+  id: number;
+  name: string;
+  created_at: string;
+  updated_at: string;
+  subdomain: string;
+  phone_number: string | null;
+  emrs: string[];
+  country_code: string;
+  is_appt_categories_location_specific: boolean;
+  appointment_types_location_scoped: boolean;
+  is_sync_notifications: boolean;
+  notify_insert_fails: boolean;
+  wlogo: string | null;
+  is_appt_booking_patient_type_activated: boolean;
+  is_appt_booking_insurance_activated: boolean;
+  show_online_booking_no_insurance_option: boolean;
+  request_online_booking_location_permissions: boolean;
+  gtm_tags: string[];
+  show_map: boolean;
+  logo_location_scoped: boolean;
+  locations: Location[];
+};
