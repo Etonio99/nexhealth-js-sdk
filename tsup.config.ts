@@ -6,4 +6,7 @@ export default defineConfig({
   dts: true,
   minify: true,
   tsconfig: 'tsconfig.json',
+  outExtension({ format }) {
+    return { js: format === 'esm' ? '.mjs' : '.cjs' };
+  },
 });

@@ -4,14 +4,17 @@
   "description": "",
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
+  "files": ["dist"],
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.cjs"
     }
   },
   "scripts": {
     "build": "tsup",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run build",
     "lint:fix": "eslint . --fix && npx prettier --write .",
     "barrels": "barrelsby --directory src/types --location all --singleQuotes --delete",
