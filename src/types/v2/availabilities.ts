@@ -13,11 +13,11 @@ export type Availability = {
   tz_offset: string;
   active: boolean;
   synced: boolean;
-  appointment_types: AppointmentType[];
+  appointment_types?: AppointmentType[];
 };
 
 export type CustomRecurrence = {
   num: number;
   unit: string;
-  reference: string;
+  ref: string;
 };

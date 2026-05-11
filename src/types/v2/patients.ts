@@ -1,7 +1,7 @@
 import type { Adjustment } from './adjustments.js';
 import type { Appointment } from './appointments.js';
 import type { Charge } from './charges.js';
-import type { InsuranceCoverage } from './insurances.js';
+import type { InsuranceCoverage } from './insurance_plans.js';
 import type { PatientAlert } from './patient_alert.js';
 import type { Payment } from './payments.js';
 import type { Procedure } from './procedures.js';

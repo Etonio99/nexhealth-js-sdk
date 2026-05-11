@@ -23,7 +23,7 @@ export type Location = {
   foreign_id: string | null;
   foreign_id_type: string | null;
   email: string | null;
-  tz: string;
+  tz: string | null;
   last_sync_time: string | null;
   insert_appt_client: boolean;
   map_by_operatory: boolean;
@@ -31,8 +31,13 @@ export type Location = {
   set_availability_by_operatory: boolean;
   inactive: boolean;
   wlogo: string | null;
-  weight: number | null;
+  weight: number;
 };
+
+export type LocationBasic = Pick<
+  Location,
+  'id' | 'name' | 'street_address' | 'street_address_2' | 'city' | 'state' | 'zip_code' | 'phone_number' | 'email' | 'inactive'
+>;
 
 // PARAMS
 

@@ -1,3 +1,5 @@
+import type { LocationBasic } from './locations.js';
+
 export type Institution = {
   id: number;
   name: string;
@@ -19,5 +21,5 @@ export type Institution = {
   gtm_tags: string[];
   show_map: boolean;
   logo_location_scoped: boolean;
-  locations: Location[];
+  locations: LocationBasic[];
 };

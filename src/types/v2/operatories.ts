@@ -13,5 +13,6 @@ export type Operatory = {
   profile_url: string | null;
   active: boolean;
   bookable_online: boolean;
-  appt_categories: AppointmentType[];
+  appt_categories?: AppointmentType[];
+  appointment_types?: AppointmentType[];
 };

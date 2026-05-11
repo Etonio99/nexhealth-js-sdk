@@ -34,7 +34,7 @@ export type Appointment = {
   is_new_clients_patient: boolean | null;
   confirmed_at: string | null;
   sooner_if_possible: boolean;
-  operatory_id: number;
+  operatory_id: number | null;
   deleted: boolean;
   checked_out: boolean;
   checked_out_at: string | null;

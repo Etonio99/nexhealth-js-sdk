@@ -12,7 +12,7 @@ import type {
 import type { RequestFunction } from '../../types/common.js';
 import { V2Constants } from './constants.js';
 import { NexHealthAPIError } from '../../error.js';
-import type { InsuranceCoverage } from '../../types/v2/insurances.js';
+import type { InsuranceCoverage } from '../../types/v2/insurance_plans.js';
 
 export function V2PatientsResource(request: RequestFunction) {
   return {
