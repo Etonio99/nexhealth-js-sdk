@@ -1,6 +1,6 @@
 import type { AppointmentType } from './appointment_types.js';
 import type { Availability } from './availabilities.js';
-import type { Location } from './locations.js';
+import type { NexLocation } from './locations.js';
 import type { Bio } from './patients.js';
 
 export type Provider = {
@@ -25,7 +25,7 @@ export type Provider = {
   specialty_code: string | null;
   nexhealth_specialty: string | null;
   provider_requestables: ProviderRequestable[];
-  locations?: Location[];
+  locations?: NexLocation[];
   availabilities?: Availability[] | null;
   appointment_types?: AppointmentType[];
 };

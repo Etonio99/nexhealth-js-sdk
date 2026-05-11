@@ -2,10 +2,10 @@ export type Locations = {
   id: number;
   name: string;
   subdomain: string;
-  locations: Location[];
+  locations: NexLocation[];
 };
 
-export type Location = {
+export type NexLocation = {
   id: number;
   name: string;
   institution_id: number;
@@ -35,8 +35,17 @@ export type Location = {
 };
 
 export type LocationBasic = Pick<
-  Location,
-  'id' | 'name' | 'street_address' | 'street_address_2' | 'city' | 'state' | 'zip_code' | 'phone_number' | 'email' | 'inactive'
+  NexLocation,
+  | 'id'
+  | 'name'
+  | 'street_address'
+  | 'street_address_2'
+  | 'city'
+  | 'state'
+  | 'zip_code'
+  | 'phone_number'
+  | 'email'
+  | 'inactive'
 >;
 
 // PARAMS
