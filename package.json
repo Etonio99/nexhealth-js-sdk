@@ -16,7 +16,8 @@
     "lint:fix": "eslint . --fix && npx prettier --write .",
     "barrels": "barrelsby --directory src/types --location all --singleQuotes --delete",
     "barrels:fix": "tsx scripts/fix-barrels.ts",
-    "generate-barrels": "npm run barrels && npm run barrels:fix"
+    "generate-barrels": "npm run barrels && npm run barrels:fix",
+    "generate-resource-exports": "tsx scripts/generate-resource-exports.ts"
   },
   "repository": {
     "type": "git",

@@ -6,10 +6,10 @@ import { V2PatientsResource } from './patients.js';
 
 export function createV2Resources(request: RequestFunction) {
   return {
+    appointments: V2AppointmentsResource(request),
     institutions: V2InstitutionsResource(request),
     locations: V2LocationsResource(request),
     patients: V2PatientsResource(request),
-    appointments: V2AppointmentsResource(request),
   };
 }
 
