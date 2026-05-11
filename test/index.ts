@@ -1,10 +1,6 @@
 // Run this with node --env-file=.env test/index.ts
 
 import { NexHealthClient } from '../dist/index.js';
-import type {
-  CreateAppointmentBodyParams,
-  CreateAppointmentQueryParams,
-} from '../src/types/v2/index.js';
 
 async function main() {
   const apiKey = process.env.API_KEY;
@@ -13,25 +9,10 @@ async function main() {
   }
   const nexhealth = new NexHealthClient(apiKey);
 
-  const queryParams: CreateAppointmentQueryParams = {
+  const response = await nexhealth.v2.operatories.listAll({
     subdomain: 'nexhealthsmiles',
     location_id: 19617,
-  };
-
-  const bodyParams: CreateAppointmentBodyParams = {
-    appt: {
-      patient_id: 385394006,
-      provider_id: 239571466,
-      start_time: '2026-05-12T16:30:00Z',
-      end_time: '2026-05-12T17:00:00Z',
-      operatory_id: 23,
-    },
-  };
-
-  const response = await nexhealth.v2.appointments.create(
-    queryParams,
-    bodyParams
-  );
+  });
 
   console.log('RESPONSE:', response);
 }

@@ -1,6 +1,7 @@
 import type { Adjustment } from './adjustments.js';
 import type { Appointment } from './appointments.js';
 import type { Charge } from './charges.js';
+import type { PaginationInfo } from './common.js';
 import type { InsuranceCoverage } from './insurance_plans.js';
 import type { PatientAlert } from './patient_alert.js';
 import type { Payment } from './payments.js';
@@ -117,11 +118,6 @@ type BaseListPatientQueryParams = {
   sort?: 'name' | '-name' | 'created_at' | '-created_at';
   appointment_date_start?: string;
   appointment_date_end?: string;
-};
-
-export type PaginationInfo = {
-  page: number;
-  per_page: number;
 };
 
 export type ListPatientsQueryParams = BaseListPatientQueryParams &

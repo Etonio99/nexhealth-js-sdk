@@ -1,4 +1,5 @@
 import type { AppointmentType } from './appointment_types.js';
+import type { PaginationInfo } from './common.js';
 
 export type Operatory = {
   id: number;
@@ -16,3 +17,26 @@ export type Operatory = {
   appt_categories?: AppointmentType[];
   appointment_types?: AppointmentType[];
 };
+
+//PARAMS
+
+export type GetOperatoryQueryParams = {
+  subdomain: string;
+  include?: OperatoryInclude[];
+};
+
+type BaseListOperatoriesQueryParams = {
+  subdomain: string;
+  location_id: number;
+  search_name?: string;
+  foreign_id?: string;
+  updated_since?: string;
+  include?: OperatoryInclude[];
+};
+
+export type ListOperatoriesQueryParams = BaseListOperatoriesQueryParams &
+  PaginationInfo;
+
+export type ListAllOperatoriesQueryParams = BaseListOperatoriesQueryParams;
+
+export type OperatoryInclude = 'appt_types' | 'appt_categories';
