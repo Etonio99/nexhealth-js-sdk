@@ -1,13 +1,23 @@
-// Run this with node --env-file=.env test/index.mjs
+// Run this with node --env-file=.env test/index.ts
 
 import { NexHealthClient } from '../dist/index.js';
+import type { ListLocationsQueryParams } from '../src/types/v2/index.js';
 
-// eslint-disable-next-line no-undef
-const nexhealth = new NexHealthClient(process.env.API_KEY);
+async function main() {
+  const apiKey = process.env.API_KEY;
+  if (!apiKey) {
+    return;
+  }
+  const nexhealth = new NexHealthClient(apiKey);
 
-const response = await nexhealth.v2.locations.list({
-  subdomain: 'nexhealthsmiles',
-});
+  const params: ListLocationsQueryParams = {
+    subdomain: 'nexhealthsmiles',
+  };
+
+  const response = await nexhealth.v2.locations.list(params);
+
+  console.log('RESPONSE:', response);
+}
 
 // const response = await nexhealth.v2.patients.listAll({
 //   subdomain: 'nexhealthsmiles',
@@ -43,4 +53,4 @@ const response = await nexhealth.v2.locations.list({
 //     subdomain: "nexhealthsmiles",
 // })
 
-console.log('RESPONSE:', response);
+main();

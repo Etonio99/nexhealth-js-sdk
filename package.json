@@ -13,7 +13,10 @@
   "scripts": {
     "build": "tsup",
     "prepublishOnly": "npm run build",
-    "lint:fix": "eslint . --fix && npx prettier --write ."
+    "lint:fix": "eslint . --fix && npx prettier --write .",
+    "barrels": "barrelsby --directory src/types --location all --singleQuotes --delete",
+    "barrels:fix": "tsx scripts/fix-barrels.ts",
+    "generate-barrels": "npm run barrels && npm run barrels:fix"
   },
   "repository": {
     "type": "git",
@@ -29,11 +32,14 @@
   "homepage": "https://github.com/Etonio99/nexhealth-js-sdk#readme",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/node": "^25.6.2",
+    "barrelsby": "^2.8.1",
     "eslint": "^10.2.1",
     "globals": "^17.5.0",
     "jiti": "^2.6.1",
     "prettier": "3.8.3",
     "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.0"
   }
