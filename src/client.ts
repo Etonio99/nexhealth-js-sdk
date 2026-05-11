@@ -2,8 +2,8 @@ import { NexHealthAPIError } from './error.js';
 import type { AuthenticatesData } from './types/v2/authenticates.js';
 import type { NexHealthApiResponse } from './types/base.js';
 import type { Method } from './types/common.js';
-import { V2Resources } from './resources/v2/index.js';
-import { V2024Resources } from './resources/v2024/index.js';
+import { createV2Resources, type V2Resources } from './resources/v2/index.js';
+import { createV2024Resources, type V2024Resources } from './resources/v2024/index.js';
 
 export class NexHealthClient {
   private apiKey: string;
@@ -18,10 +18,10 @@ export class NexHealthClient {
   constructor(apiKey: string) {
     this.apiKey = apiKey;
 
-    this.v2 = new V2Resources((endpoint, method, queryParams, data) =>
+    this.v2 = createV2Resources((endpoint, method, queryParams, data) =>
       this.request(endpoint, method, queryParams, data)
     );
-    this.v2024 = new V2024Resources((endpoint, method, queryParams, data) =>
+    this.v2024 = createV2024Resources((endpoint, method, queryParams, data) =>
       this.request(endpoint, method, queryParams, data, {
         'Nex-Api-Version': 'v20240412',
       })
