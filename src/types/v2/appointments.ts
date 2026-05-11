@@ -81,6 +81,37 @@ export type AppointmentDescriptor = {
 
 // PARAMS
 
+export type CreateAppointmentQueryParams = {
+  subdomain: string;
+  location_id: number;
+  notify_patient?: boolean;
+};
+
+export type CreateAppointmentBodyParams = {
+  appt: {
+    patient_id: number;
+    provider_id: number;
+    start_time: string;
+    end_time?: string;
+    appointment_type_id?: number;
+    operatory_id?: number;
+    note?: string;
+    unavailable?: boolean;
+    is_guardian?: boolean;
+    is_new_clients_patient?: boolean;
+    referrer?: string;
+    descriptor_ids?: number[];
+    patient?: {
+      first_name: string;
+      last_name: string;
+      bio: {
+        date_of_birth: string;
+        gender?: 'Male' | 'Female' | 'Other';
+      };
+    };
+  };
+};
+
 export type GetAppointmentQueryParams = {
   subdomain: string;
   include?: AppointmentInclude[];
