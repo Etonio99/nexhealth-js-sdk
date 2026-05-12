@@ -1,9 +1,3 @@
-export type DocumentType = {
-  id: number;
-  name: string;
-  active: boolean;
-};
-
 export type PatientDocument = {
   id: number;
   filename: string;
@@ -14,10 +8,6 @@ export type PatientDocument = {
 };
 
 // PARAMS
-
-export type ListDocumentTypesQueryParams = {
-  subdomain: string;
-};
 
 export type ListPatientDocumentsQueryParams = {
   subdomain: string;

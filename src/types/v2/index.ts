@@ -10,7 +10,7 @@ export * from './authenticates.js';
 export * from './availabilities.js';
 export * from './charges.js';
 export * from './common.js';
-export * from './documents.js';
+export * from './patient_documents.js';
 export * from './institutions.js';
 export * from './insurance_plans.js';
 export * from './locations.js';
