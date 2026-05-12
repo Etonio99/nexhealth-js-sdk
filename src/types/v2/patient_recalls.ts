@@ -1,3 +1,5 @@
+import type { PaginationParams } from './common.js';
+
 export type RecallType = {
   id: number;
   name: string;
@@ -31,14 +33,23 @@ export type PatientRecall = {
 
 // PARAMS
 
-export type ListRecallTypesQueryParams = {
+export type GetPatientRecallQueryParams = {
   subdomain: string;
-  location_id: number;
 };
 
-export type ListPatientRecallsQueryParams = {
+type BaseListPatientRecallsQueryParams = {
   subdomain: string;
   location_id: number;
-  page?: number;
-  per_page?: number;
+  recall_id?: number;
+  patient_id?: number;
+  foreign_id?: string;
+  updated_since?: string;
+  due_after?: string;
+  sort?: 'date_due' | '-date_due';
 };
+
+export type ListPatientRecallsQueryParams = BaseListPatientRecallsQueryParams &
+  PaginationParams;
+
+export type ListAllPatientRecallsQueryParams =
+  BaseListPatientRecallsQueryParams;
