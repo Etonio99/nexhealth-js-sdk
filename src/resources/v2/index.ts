@@ -12,6 +12,7 @@ import { V2PatientRecallsResource } from './patient_recalls.js';
 import { V2PatientsResource } from './patients.js';
 import { V2ProceduresResource } from './procedures.js';
 import { V2ProvidersResource } from './providers.js';
+import { V2RecallTypesResource } from './recall_types.js';
 
 export function createV2Resources(request: RequestFunction) {
   return {
@@ -28,6 +29,7 @@ export function createV2Resources(request: RequestFunction) {
     patients: V2PatientsResource(request),
     procedures: V2ProceduresResource(request),
     providers: V2ProvidersResource(request),
+    recallTypes: V2RecallTypesResource(request),
   };
 }
 

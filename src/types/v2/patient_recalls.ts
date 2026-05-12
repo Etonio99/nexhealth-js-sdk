@@ -1,22 +1,5 @@
 import type { PaginationParams } from './common.js';
-
-export type RecallType = {
-  id: number;
-  name: string;
-  description: string | null;
-  foreign_id: string | null;
-  foreign_id_type: string | null;
-  interval_num: number | null;
-  interval_unit: string | null;
-  location_id: number;
-  created_at: string;
-  updated_at: string;
-};
-
-export type RecallTypeBasic = Pick<
-  RecallType,
-  'id' | 'name' | 'description' | 'interval_num' | 'interval_unit'
->;
+import type { RecallTypeBasic } from './recall_types.js';
 
 export type PatientRecall = {
   id: number;
