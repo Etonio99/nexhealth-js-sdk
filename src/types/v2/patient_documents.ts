@@ -22,6 +22,5 @@ export type CreatePatientDocumentQueryParams = {
 
 export type CreatePatientDocumentBodyParams = {
   file: File;
-  name?: string;
   document_type_id?: number;
 };
