@@ -4,7 +4,9 @@
   "description": "",
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -14,7 +16,7 @@
   },
   "scripts": {
     "build": "tsup",
-    "prepare": "npm run build",
+    "prepare": "npm run generate-barrels && npm run generate-resource-exports && npm run build",
     "prepublishOnly": "npm run build",
     "lint:fix": "eslint . --fix && npx prettier --write .",
     "barrels": "barrelsby --directory src/types --location all --singleQuotes --delete",
