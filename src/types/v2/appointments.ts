@@ -1,4 +1,5 @@
 import type { AppointmentType } from './appointment_types.js';
+import type { PaginationParams } from './common.js';
 import type { Operatory } from './operatories.js';
 import type { Patient } from './patients.js';
 import type { Procedure } from './procedures.js';
@@ -117,7 +118,7 @@ export type GetAppointmentQueryParams = {
   include?: AppointmentInclude[];
 };
 
-export type ListAppointmentQueryParams = {
+type BaseListAppointmentsQueryParams = {
   subdomain: string;
   location_id: number;
   start: string;
@@ -134,9 +135,12 @@ export type ListAppointmentQueryParams = {
   operatory_ids?: number[];
   created_by?: number;
   include?: AppointmentInclude[];
-  page?: number;
-  per_page?: number;
 };
+
+export type ListAppointmentsQueryParams = BaseListAppointmentsQueryParams &
+  PaginationParams;
+
+export type ListAllAppointmentsQueryParams = BaseListAppointmentsQueryParams;
 
 export type AppointmentInclude =
   | 'patient'

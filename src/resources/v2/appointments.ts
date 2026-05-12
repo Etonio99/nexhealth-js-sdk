@@ -7,9 +7,11 @@ import type {
   EditAppointmentBodyParams,
   EditAppointmentQueryParams,
   GetAppointmentQueryParams,
+  ListAllAppointmentsQueryParams,
   ListAppointmentDescriptorsQueryParams,
-  ListAppointmentQueryParams,
+  ListAppointmentsQueryParams,
 } from '../../types/v2/appointments.js';
+import { paginateAll } from '../pagination.js';
 
 export function V2AppointmentsResource(request: RequestFunction) {
   return {
@@ -40,11 +42,19 @@ export function V2AppointmentsResource(request: RequestFunction) {
         'GET',
         queryParams
       ),
-    list: (queryParams: ListAppointmentQueryParams) =>
+    list: (queryParams: ListAppointmentsQueryParams) =>
       request<NexHealthApiResponse<Appointment[]>>(
         'appointments',
         'GET',
         queryParams
+      ),
+    listAll: (queryParams: ListAllAppointmentsQueryParams) =>
+      paginateAll(
+        request,
+        'appointments',
+        queryParams,
+        (data: Appointment[]) => data,
+        (appointments) => appointments
       ),
     descriptors: {
       list: (
