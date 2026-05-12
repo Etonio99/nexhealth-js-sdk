@@ -29,7 +29,7 @@ export function V2AppointmentTypesResource(request: RequestFunction) {
       queryParams: DeleteAppointmentTypeQueryParams
     ) =>
       request<NexHealthApiResponse<AppointmentType>>(
-        'appointment_types',
+        `appointment_types/${appointmentTypeId}`,
         'DELETE',
         queryParams
       ),
