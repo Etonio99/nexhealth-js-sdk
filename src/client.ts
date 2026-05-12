@@ -3,7 +3,10 @@ import type { AuthenticatesData } from './types/v2/authenticates.js';
 import type { NexHealthApiResponse } from './types/base.js';
 import type { Method } from './types/common.js';
 import { createV2Resources, type V2Resources } from './resources/v2/index.js';
-import { createV2024Resources, type V2024Resources } from './resources/v2024/index.js';
+import {
+  createV2024Resources,
+  type V2024Resources,
+} from './resources/v2024/index.js';
 
 export class NexHealthClient {
   private apiKey: string;
@@ -106,6 +109,10 @@ export class NexHealthClient {
       headers: finalHeaders,
       body: bodyParams ? JSON.stringify(bodyParams) : null,
     });
+
+    if (response.status === 204) {
+      return null as T;
+    }
 
     const parsed = await response.json();
 

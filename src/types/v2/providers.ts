@@ -1,6 +1,6 @@
 import type { AppointmentType } from './appointment_types.js';
 import type { Availability } from './availabilities.js';
-import type { PaginationInfo } from './common.js';
+import type { PaginationParams } from './common.js';
 import type { NexLocation } from './locations.js';
 import type { Bio } from './patients.js';
 
@@ -54,7 +54,7 @@ type BaseListProvidersQueryParams = {
 };
 
 export type ListProvidersQueryParams = BaseListProvidersQueryParams &
-  PaginationInfo;
+  PaginationParams;
 
 export type ListAllProvidersQueryParams = BaseListProvidersQueryParams;
 

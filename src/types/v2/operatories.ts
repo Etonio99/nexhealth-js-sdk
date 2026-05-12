@@ -1,5 +1,5 @@
 import type { AppointmentType } from './appointment_types.js';
-import type { PaginationInfo } from './common.js';
+import type { PaginationParams } from './common.js';
 
 export type Operatory = {
   id: number;
@@ -35,7 +35,7 @@ type BaseListOperatoriesQueryParams = {
 };
 
 export type ListOperatoriesQueryParams = BaseListOperatoriesQueryParams &
-  PaginationInfo;
+  PaginationParams;
 
 export type ListAllOperatoriesQueryParams = BaseListOperatoriesQueryParams;
 

@@ -13,6 +13,8 @@ export type AppointmentSlot = {
   provider_id: number | null;
 };
 
+// PARAMS
+
 export type ListAppointmentSlotsQueryParams = {
   subdomain: string;
   start_date: string;

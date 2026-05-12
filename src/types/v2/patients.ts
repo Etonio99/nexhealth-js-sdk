@@ -1,7 +1,7 @@
 import type { Adjustment } from './adjustments.js';
 import type { Appointment } from './appointments.js';
 import type { Charge } from './charges.js';
-import type { PaginationInfo } from './common.js';
+import type { PaginationParams } from './common.js';
 import type { InsuranceCoverage } from './insurance_plans.js';
 import type { PatientAlert } from './patient_alert.js';
 import type { Payment } from './payments.js';
@@ -121,7 +121,7 @@ type BaseListPatientQueryParams = {
 };
 
 export type ListPatientsQueryParams = BaseListPatientQueryParams &
-  PaginationInfo;
+  PaginationParams;
 
 export type ListAllPatientsQueryParams = BaseListPatientQueryParams;
 
@@ -166,5 +166,5 @@ export type BioBodyParams = {
 export type GetPatientInsuranceCoveragesQueryParams =
   | ({
       subdomain: string;
-    } & PaginationInfo)
+    } & PaginationParams)
   | undefined;

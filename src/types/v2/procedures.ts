@@ -1,4 +1,4 @@
-import type { PaginationInfo } from './common.js';
+import type { PaginationParams } from './common.js';
 
 export type Procedure = {
   id: number;
@@ -31,6 +31,6 @@ export type BaseListProceduresQueryParams = {
 };
 
 export type ListProceduresQueryParams = BaseListProceduresQueryParams &
-  PaginationInfo;
+  PaginationParams;
 
 export type ListAllProceduresQueryParams = BaseListProceduresQueryParams;
