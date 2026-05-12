@@ -1,5 +1,6 @@
 import type { AppointmentType } from './appointment_types.js';
 import type { Availability } from './availabilities.js';
+import type { PaginationInfo } from './common.js';
 import type { NexLocation } from './locations.js';
 import type { Bio } from './patients.js';
 
@@ -33,3 +34,31 @@ export type Provider = {
 export type ProviderRequestable = {
   location_id: number;
 };
+
+// PARAMS
+
+export type GetProviderQueryParams = {
+  subdomain: string;
+  include?: ProviderInclude[];
+};
+
+type BaseListProvidersQueryParams = {
+  subdomain: string;
+  include?: ProviderInclude[];
+  location_id?: number;
+  ids?: number[];
+  foreign_id?: string;
+  requestable?: boolean;
+  inactive?: boolean;
+  updated_since?: string;
+};
+
+export type ListProvidersQueryParams = BaseListProvidersQueryParams &
+  PaginationInfo;
+
+export type ListAllProvidersQueryParams = BaseListProvidersQueryParams;
+
+export type ProviderInclude =
+  | 'locations'
+  | 'availabilities'
+  | 'appointment_types';
