@@ -14,6 +14,7 @@ export * from './document_types.js';
 export * from './institutions.js';
 export * from './insurance_plans.js';
 export * from './locations.js';
+export * from './nex_staff.js';
 export * from './operatories.js';
 export * from './patient_alert.js';
 export * from './patient_documents.js';

@@ -6,6 +6,7 @@ import { V2AvailabilitiesResource } from './availabilities.js';
 import { V2DocumentTypesResource } from './document_types.js';
 import { V2InstitutionsResource } from './institutions.js';
 import { V2LocationsResource } from './locations.js';
+import { V2NexStaffResource } from './nex_staff.js';
 import { V2OperatoriesResource } from './operatories.js';
 import { V2PatientDocumentsResource } from './patient_documents.js';
 import { V2PatientRecallsResource } from './patient_recalls.js';
@@ -23,6 +24,7 @@ export function createV2Resources(request: RequestFunction) {
     documentTypes: V2DocumentTypesResource(request),
     institutions: V2InstitutionsResource(request),
     locations: V2LocationsResource(request),
+    nexStaff: V2NexStaffResource(request),
     operatories: V2OperatoriesResource(request),
     patientDocuments: V2PatientDocumentsResource(request),
     patientRecalls: V2PatientRecallsResource(request),
