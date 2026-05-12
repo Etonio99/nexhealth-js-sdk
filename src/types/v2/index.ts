@@ -25,5 +25,5 @@ export * from './payments.js';
 export * from './procedures.js';
 export * from './providers.js';
 export * from './recall_types.js';
-export * from './sync.js';
+export * from './sync_statuses.js';
 export * from './webhooks.js';
