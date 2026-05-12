@@ -4,7 +4,10 @@ import type {
   Appointment,
   CreateAppointmentBodyParams,
   CreateAppointmentQueryParams,
+  EditAppointmentBodyParams,
+  EditAppointmentQueryParams,
   GetAppointmentQueryParams,
+  ListAppointmentDescriptorsQueryParams,
   ListAppointmentQueryParams,
 } from '../../types/v2/appointments.js';
 
@@ -20,6 +23,17 @@ export function V2AppointmentsResource(request: RequestFunction) {
           stripe_client_secret?: string | null;
         }>
       >('appointments', 'POST', queryParams, bodyParams),
+    edit: (
+      appointmentId: number,
+      queryParams: EditAppointmentQueryParams,
+      bodyParams: EditAppointmentBodyParams
+    ) =>
+      request<
+        NexHealthApiResponse<{
+          appt: Appointment;
+          stripe_client_secret?: string | null;
+        }>
+      >(`appointments/${appointmentId}`, 'PATCH', queryParams, bodyParams),
     get: (appointmentId: number, queryParams: GetAppointmentQueryParams) =>
       request<NexHealthApiResponse<Appointment>>(
         `appointments/${appointmentId}`,
@@ -32,5 +46,16 @@ export function V2AppointmentsResource(request: RequestFunction) {
         'GET',
         queryParams
       ),
+    descriptors: {
+      list: (
+        appointmentId: number,
+        queryParams: ListAppointmentDescriptorsQueryParams
+      ) =>
+        request<NexHealthApiResponse<Appointment[]>>(
+          `appointments/${appointmentId}/appointment_descriptors`,
+          'GET',
+          queryParams
+        ),
+    },
   };
 }

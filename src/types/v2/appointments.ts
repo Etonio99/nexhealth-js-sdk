@@ -146,3 +146,19 @@ export type AppointmentInclude =
   | 'procedures'
   | 'operatory'
   | 'appointment_type';
+
+export type EditAppointmentQueryParams = {
+  subdomain: string;
+};
+
+export type EditAppointmentBodyParams = {
+  appt: {
+    confirmed?: boolean;
+    cancelled?: boolean;
+  };
+};
+
+export type ListAppointmentDescriptorsQueryParams = {
+  subdomain: string;
+  descriptor_type?: string;
+};
