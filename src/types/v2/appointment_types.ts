@@ -6,3 +6,62 @@ export type AppointmentType = {
   minutes: number;
   bookable_online: boolean;
 };
+
+// PARAMS
+
+export type GetAppointmentTypeQueryParams = {
+  subdomain: string;
+  location_id?: number;
+  include?: AppointmentTypeInclude[];
+};
+
+export type ListAppointmentTypesQueryParams = {
+  subdomain: string;
+  location_id?: number;
+  include?: AppointmentTypeInclude[];
+};
+
+export type AppointmentTypeInclude = 'descriptors';
+
+export type CreateAppointmentTypeQueryParams = {
+  subdomain: string;
+};
+
+export type CreateAppointmentTypeBodyParams = {
+  location_id?: number;
+  appointment_type: {
+    name: string;
+    minutes?: number;
+    parent_type?: 'institution' | 'location';
+    parent_id?: number;
+    bookable_online?: boolean;
+    emr_appt_descriptor_ids?: number[];
+  };
+};
+
+export type EditAppointmentTypeQueryParams = {
+  subdomain: string;
+};
+
+export type EditAppointmentTypeBodyParams = {
+  location_id?: number;
+  appointment_type: {
+    name?: string;
+    minutes?: number;
+    parent_type?: 'institution' | 'location';
+    parent_id?: number;
+    bookable_online?: boolean;
+    emr_appt_descriptor_ids?: number[];
+  };
+};
+
+export type DeleteAppointmentTypeQueryParams = {
+  subdomain: string;
+  location_id?: number;
+};
+
+export type ListAppointmentTypeDescriptorsQueryParams = {
+  subdomain: string;
+  location_id?: number;
+  descriptor_type?: string;
+};

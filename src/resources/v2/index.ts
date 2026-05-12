@@ -1,4 +1,5 @@
 import type { RequestFunction } from '../../types/common.js';
+import { V2AppointmentTypesResource } from './appointment_types.js';
 import { V2AppointmentsResource } from './appointments.js';
 import { V2InstitutionsResource } from './institutions.js';
 import { V2LocationsResource } from './locations.js';
@@ -9,6 +10,7 @@ import { V2ProvidersResource } from './providers.js';
 
 export function createV2Resources(request: RequestFunction) {
   return {
+    appointmentTypes: V2AppointmentTypesResource(request),
     appointments: V2AppointmentsResource(request),
     institutions: V2InstitutionsResource(request),
     locations: V2LocationsResource(request),
