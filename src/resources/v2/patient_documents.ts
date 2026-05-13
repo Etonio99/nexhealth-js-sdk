@@ -13,13 +13,22 @@ export function V2PatientDocumentsResource(request: RequestFunction) {
       patientId: number,
       queryParams: CreatePatientDocumentQueryParams,
       bodyParams: CreatePatientDocumentBodyParams
-    ) =>
-      request<NexHealthApiResponse<PatientDocument>>(
+    ) => {
+      const formData = new FormData();
+      formData.append('file', bodyParams.file);
+      if (bodyParams.document_type_id != null) {
+        formData.append(
+          'document_type_id',
+          String(bodyParams.document_type_id)
+        );
+      }
+      return request<NexHealthApiResponse<PatientDocument>>(
         `patients/${patientId}/documents`,
         'POST',
         queryParams,
-        bodyParams
-      ),
+        formData
+      );
+    },
     list: (patientId: number, queryParams: ListPatientDocumentsQueryParams) =>
       request<NexHealthApiResponse<PatientDocument[]>>(
         `patients/${patientId}/documents`,

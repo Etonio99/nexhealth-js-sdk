@@ -21,6 +21,6 @@ export type CreatePatientDocumentQueryParams = {
 };
 
 export type CreatePatientDocumentBodyParams = {
-  file: File;
+  file: Blob;
   document_type_id?: number;
 };

@@ -100,14 +100,21 @@ export class NexHealthClient {
       ...headers,
     };
 
-    if (bodyParams) {
+    if (bodyParams && !(bodyParams instanceof FormData)) {
       finalHeaders['content-type'] = 'application/json';
     }
+
+    const getBody = () => {
+      if (!bodyParams) return null;
+      if (bodyParams instanceof FormData) return bodyParams;
+      return JSON.stringify(bodyParams);
+    };
+    const body = getBody();
 
     const response = await fetch(url, {
       method,
       headers: finalHeaders,
-      body: bodyParams ? JSON.stringify(bodyParams) : null,
+      body,
     });
 
     if (response.status === 204) {
