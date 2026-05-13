@@ -3,7 +3,7 @@ import type { Appointment } from './appointments.js';
 import type { Charge } from './charges.js';
 import type { PaginationParams } from './common.js';
 import type { InsuranceCoverage } from './insurance_plans.js';
-import type { PatientAlert } from './patient_alert.js';
+import type { PatientAlert } from './patient_alerts.js';
 import type { Payment } from './payments.js';
 import type { Procedure } from './procedures.js';
 import type { Provider } from './providers.js';

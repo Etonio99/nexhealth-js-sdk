@@ -16,7 +16,7 @@ export * from './insurance_plans.js';
 export * from './locations.js';
 export * from './nex_staff.js';
 export * from './operatories.js';
-export * from './patient_alert.js';
+export * from './patient_alerts.js';
 export * from './patient_documents.js';
 export * from './patient_recalls.js';
 export * from './patients.js';
