@@ -18,7 +18,7 @@ export type CreateWebhookEndpointBodyParams = {
   secret_key?: string;
 };
 
-export type EditWebhookEndpointBodyParams = {
+export type UpdateWebhookEndpointBodyParams = {
   target_url?: string;
   active?: boolean;
 };

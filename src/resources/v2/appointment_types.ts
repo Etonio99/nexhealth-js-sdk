@@ -5,8 +5,8 @@ import type {
   CreateAppointmentTypeBodyParams,
   CreateAppointmentTypeQueryParams,
   DeleteAppointmentTypeQueryParams,
-  EditAppointmentTypeBodyParams,
-  EditAppointmentTypeQueryParams,
+  UpdateAppointmentTypeBodyParams,
+  UpdateAppointmentTypeQueryParams,
   GetAppointmentTypeQueryParams,
   ListAppointmentTypeDescriptorsQueryParams,
   ListAppointmentTypesQueryParams,
@@ -33,10 +33,10 @@ export function V2AppointmentTypesResource(request: RequestFunction) {
         'DELETE',
         queryParams
       ),
-    edit: (
+    update: (
       appointmentTypeId: number,
-      queryParams: EditAppointmentTypeQueryParams,
-      bodyParams: EditAppointmentTypeBodyParams
+      queryParams: UpdateAppointmentTypeQueryParams,
+      bodyParams: UpdateAppointmentTypeBodyParams
     ) =>
       request<NexHealthApiResponse<AppointmentType>>(
         `appointment_types/${appointmentTypeId}`,

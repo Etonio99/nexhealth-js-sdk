@@ -151,11 +151,11 @@ export type AppointmentInclude =
   | 'operatory'
   | 'appointment_type';
 
-export type EditAppointmentQueryParams = {
+export type UpdateAppointmentQueryParams = {
   subdomain: string;
 };
 
-export type EditAppointmentBodyParams = {
+export type UpdateAppointmentBodyParams = {
   appt: {
     confirmed?: boolean;
     cancelled?: boolean;

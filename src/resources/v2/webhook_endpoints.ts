@@ -2,7 +2,7 @@ import type { NexHealthApiResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   CreateWebhookEndpointBodyParams,
-  EditWebhookEndpointBodyParams,
+  UpdateWebhookEndpointBodyParams,
   ListWebhookEndpointsQueryParams,
   WebhookEndpoint,
 } from '../../types/v2/webhook_endpoints.js';
@@ -17,9 +17,9 @@ export function V2WebhookEndpointsResource(request: RequestFunction) {
       ),
     delete: (webhookEndpointId: number) =>
       request<null>(`webhook_endpoints/${webhookEndpointId}`, 'DELETE'),
-    edit: (
+    update: (
       webhookEndpointId: number,
-      bodyParams: EditWebhookEndpointBodyParams
+      bodyParams: UpdateWebhookEndpointBodyParams
     ) =>
       request<NexHealthApiResponse<WebhookEndpoint>>(
         `webhook_endpoints/${webhookEndpointId}`,

@@ -39,11 +39,11 @@ export type CreateAppointmentTypeBodyParams = {
   };
 };
 
-export type EditAppointmentTypeQueryParams = {
+export type UpdateAppointmentTypeQueryParams = {
   subdomain: string;
 };
 
-export type EditAppointmentTypeBodyParams = {
+export type UpdateAppointmentTypeBodyParams = {
   location_id?: number;
   appointment_type: {
     name?: string;

@@ -71,11 +71,11 @@ export type DeleteAvailabilityQueryParams = {
   subdomain: string;
 };
 
-export type EditAvailabilityQueryParams = {
+export type UpdateAvailabilityQueryParams = {
   subdomain: string;
 };
 
-export type EditAvailabilityBodyParams = BaseAvailabilityParams;
+export type UpdateAvailabilityBodyParams = BaseAvailabilityParams;
 
 export type Weekday =
   | 'Sunday'

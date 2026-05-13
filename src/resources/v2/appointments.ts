@@ -4,8 +4,8 @@ import type {
   Appointment,
   CreateAppointmentBodyParams,
   CreateAppointmentQueryParams,
-  EditAppointmentBodyParams,
-  EditAppointmentQueryParams,
+  UpdateAppointmentBodyParams,
+  UpdateAppointmentQueryParams,
   GetAppointmentQueryParams,
   ListAllAppointmentsQueryParams,
   ListAppointmentDescriptorsQueryParams,
@@ -25,10 +25,10 @@ export function V2AppointmentsResource(request: RequestFunction) {
           stripe_client_secret?: string | null;
         }>
       >('appointments', 'POST', queryParams, bodyParams),
-    edit: (
+    update: (
       appointmentId: number,
-      queryParams: EditAppointmentQueryParams,
-      bodyParams: EditAppointmentBodyParams
+      queryParams: UpdateAppointmentQueryParams,
+      bodyParams: UpdateAppointmentBodyParams
     ) =>
       request<
         NexHealthApiResponse<{
