@@ -16,6 +16,7 @@ import { V2ProvidersResource } from './providers.js';
 import { V2RecallTypesResource } from './recall_types.js';
 import { V2SyncStatusesResource } from './sync_statuses.js';
 import { V2WebhookEndpointsResource } from './webhook_endpoints.js';
+import { V2WebhookSubscriptionsResource } from './webhook_subscriptions.js';
 
 export function createV2Resources(request: RequestFunction) {
   return {
@@ -36,6 +37,7 @@ export function createV2Resources(request: RequestFunction) {
     recallTypes: V2RecallTypesResource(request),
     syncStatuses: V2SyncStatusesResource(request),
     webhookEndpoints: V2WebhookEndpointsResource(request),
+    webhookSubscriptions: V2WebhookSubscriptionsResource(request),
   };
 }
 
