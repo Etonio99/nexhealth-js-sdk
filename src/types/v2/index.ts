@@ -26,4 +26,5 @@ export * from './procedures.js';
 export * from './providers.js';
 export * from './recall_types.js';
 export * from './sync_statuses.js';
-export * from './webhooks.js';
+export * from './webhook_endpoints.js';
+export * from './webhook_subscriptions.js';
