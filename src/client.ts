@@ -121,15 +121,32 @@ export class NexHealthClient {
       return null as T;
     }
 
-    const parsed = await response.json();
+    let parsed: unknown;
 
-    if ('code' in parsed && parsed.code) {
-      return parsed as T;
+    try {
+      parsed = await response.json();
+    } catch {
+      throw new NexHealthAPIError(
+        'Invalid response from NexHealth API',
+        response.status
+      );
     }
 
-    throw new NexHealthAPIError(
-      'Unexpected response format from NexHealth API',
-      response.status
-    );
+    if (typeof parsed !== 'object' || parsed === null || !('code' in parsed)) {
+      throw new NexHealthAPIError(
+        'Unexpected response format from NexHealth API',
+        response.status,
+        parsed
+      );
+    }
+
+    if (!parsed.code) {
+      const body = parsed as NexHealthApiResponse<never>;
+      const errors = body.error ?? [];
+      const message = errors[0] ?? body.description ?? 'NexHealth API error';
+      throw new NexHealthAPIError(message, response.status, body, errors);
+    }
+
+    return parsed as T;
   }
 }
