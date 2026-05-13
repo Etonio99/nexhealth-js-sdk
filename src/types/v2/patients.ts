@@ -102,7 +102,7 @@ export type ListPatientInclude = BasePatientInclude;
 
 type BaseListPatientQueryParams = {
   subdomain: string;
-  location_id: string;
+  location_id: number;
   name?: string;
   email?: string;
   phone_number?: string;
@@ -163,8 +163,6 @@ export type BioBodyParams = {
   race?: string;
 };
 
-export type GetPatientInsuranceCoveragesQueryParams =
-  | ({
-      subdomain: string;
-    } & PaginationParams)
-  | undefined;
+export type GetPatientInsuranceCoveragesQueryParams = {
+  subdomain: string;
+} & PaginationParams;

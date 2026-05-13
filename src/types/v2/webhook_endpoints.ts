@@ -15,7 +15,7 @@ export type ListWebhookEndpointsQueryParams = {
 
 export type CreateWebhookEndpointBodyParams = {
   target_url: string;
-  secret_key?: string;
+  active?: boolean;
 };
 
 export type UpdateWebhookEndpointBodyParams = {

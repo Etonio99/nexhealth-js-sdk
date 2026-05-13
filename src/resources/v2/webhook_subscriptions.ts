@@ -34,6 +34,7 @@ export function V2WebhookSubscriptionsResource(request: RequestFunction) {
       request<NexHealthApiResponse<WebhookSubscription>>(
         `webhook_endpoints/${webhookEndpointId}/webhook_subscriptions/${webhookSubscriptionId}`,
         'PATCH',
+        undefined,
         bodyParams
       ),
     list: (
@@ -41,7 +42,7 @@ export function V2WebhookSubscriptionsResource(request: RequestFunction) {
       queryParams: ListWebhookSubscriptionsQueryParams
     ) =>
       request<NexHealthApiResponse<WebhookSubscription[]>>(
-        `webhook_endpoints/${webhookEndpointId}`,
+        `webhook_endpoints/${webhookEndpointId}/webhook_subscriptions`,
         'GET',
         queryParams
       ),

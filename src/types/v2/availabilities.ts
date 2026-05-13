@@ -48,7 +48,7 @@ export type ListAllAvailabilitiesQueryParams =
 
 export type CreateAvailabilityQueryParams = {
   subdomain: string;
-  location_id: string;
+  location_id: number;
 };
 
 type BaseAvailabilityParams = {

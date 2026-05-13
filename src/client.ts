@@ -116,7 +116,7 @@ export class NexHealthClient {
 
     const parsed = await response.json();
 
-    if ('code' in parsed) {
+    if ('code' in parsed && parsed.code) {
       return parsed as T;
     }
 

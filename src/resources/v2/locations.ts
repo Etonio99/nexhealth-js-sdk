@@ -17,14 +17,16 @@ export function V2LocationsResource(request: RequestFunction) {
         'GET',
         queryParams
       ),
-    listLocationAppointmentDescriptors: (
-      locationId: number,
-      queryParams: ListLocationAppointmentDescriptors
-    ) =>
-      request<NexHealthApiResponse<AppointmentDescriptor>>(
-        `locations/${locationId}/appointment_descriptors`,
-        'GET',
-        queryParams
-      ),
+    descriptors: {
+      list: (
+        locationId: number,
+        queryParams: ListLocationAppointmentDescriptors
+      ) =>
+        request<NexHealthApiResponse<AppointmentDescriptor[]>>(
+          `locations/${locationId}/appointment_descriptors`,
+          'GET',
+          queryParams
+        ),
+    },
   };
 }

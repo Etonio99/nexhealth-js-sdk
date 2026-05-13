@@ -35,7 +35,7 @@ export function V2PatientsResource(request: RequestFunction) {
       patientId: number,
       queryParams: GetPatientInsuranceCoveragesQueryParams
     ) =>
-      request<NexHealthApiResponse<InsuranceCoverage>>(
+      request<NexHealthApiResponse<InsuranceCoverage[]>>(
         `patients/${patientId}/insurance_coverages`,
         'GET',
         queryParams

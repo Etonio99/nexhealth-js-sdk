@@ -13,6 +13,7 @@ export function V2WebhookEndpointsResource(request: RequestFunction) {
       request<NexHealthApiResponse<WebhookEndpoint>>(
         'webhook_endpoints',
         'POST',
+        undefined,
         bodyParams
       ),
     delete: (webhookEndpointId: number) =>
@@ -24,6 +25,7 @@ export function V2WebhookEndpointsResource(request: RequestFunction) {
       request<NexHealthApiResponse<WebhookEndpoint>>(
         `webhook_endpoints/${webhookEndpointId}`,
         'PATCH',
+        undefined,
         bodyParams
       ),
     list: (queryParams: ListWebhookEndpointsQueryParams) =>

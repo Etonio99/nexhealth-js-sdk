@@ -11,14 +11,14 @@ export function V2NexStaffResource(request: RequestFunction) {
   return {
     list: (queryParams: ListNexStaffQueryParams) =>
       request<NexHealthApiResponse<NexStaff[]>>(
-        'procedures',
+        'nex_staff',
         'GET',
         queryParams
       ),
     listAll: (queryParams: ListAllNexStaffQueryParams) =>
       paginateAll(
         request,
-        'procedures',
+        'nex_staff',
         queryParams,
         (data: NexStaff[]) => data,
         (nexStaff) => nexStaff

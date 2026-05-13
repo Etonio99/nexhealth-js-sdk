@@ -11,6 +11,7 @@ import type {
   ListAppointmentTypeDescriptorsQueryParams,
   ListAppointmentTypesQueryParams,
 } from '../../types/v2/appointment_types.js';
+import type { AppointmentDescriptor } from '../../types/v2/appointments.js';
 
 export function V2AppointmentTypesResource(request: RequestFunction) {
   return {
@@ -64,7 +65,7 @@ export function V2AppointmentTypesResource(request: RequestFunction) {
         appointmentTypeId: number,
         queryParams: ListAppointmentTypeDescriptorsQueryParams
       ) =>
-        request<NexHealthApiResponse<AppointmentType>>(
+        request<NexHealthApiResponse<AppointmentDescriptor[]>>(
           `appointment_types/${appointmentTypeId}/appointment_descriptors`,
           'GET',
           queryParams

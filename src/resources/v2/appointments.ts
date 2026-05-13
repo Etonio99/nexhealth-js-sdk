@@ -10,6 +10,7 @@ import type {
   ListAllAppointmentsQueryParams,
   ListAppointmentDescriptorsQueryParams,
   ListAppointmentsQueryParams,
+  AppointmentDescriptor,
 } from '../../types/v2/appointments.js';
 import { paginateAll } from '../pagination.js';
 
@@ -61,7 +62,7 @@ export function V2AppointmentsResource(request: RequestFunction) {
         appointmentId: number,
         queryParams: ListAppointmentDescriptorsQueryParams
       ) =>
-        request<NexHealthApiResponse<Appointment[]>>(
+        request<NexHealthApiResponse<AppointmentDescriptor[]>>(
           `appointments/${appointmentId}/appointment_descriptors`,
           'GET',
           queryParams
