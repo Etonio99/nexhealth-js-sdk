@@ -26,7 +26,6 @@ export type SyncStatusText = 'green' | 'red';
 // PARAMS
 
 export type ListSyncStatusesQueryParams = {
-  subdomain?: string;
   location_ids?: number[];
   read_status?: 'green' | 'red';
   write_status?: 'green' | 'red';

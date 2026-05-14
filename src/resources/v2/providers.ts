@@ -10,23 +10,23 @@ import { paginateAll } from '../pagination.js';
 
 export function V2ProvidersResource(request: RequestFunction) {
   return {
-    get: (providerId: number, queryParams: GetProviderQueryParams) =>
+    get: (providerId: number, queryParams?: GetProviderQueryParams) =>
       request<NexHealthApiResponse<Provider>>(
         `providers/${providerId}`,
         'GET',
         queryParams
       ),
-    list: (queryParams: ListProvidersQueryParams) =>
+    list: (queryParams?: ListProvidersQueryParams) =>
       request<NexHealthApiResponse<Provider[]>>(
         'providers',
         'GET',
         queryParams
       ),
-    listAll: (queryParams: ListAllProvidersQueryParams) =>
+    listAll: (queryParams?: ListAllProvidersQueryParams) =>
       paginateAll(
         request,
         'providers',
-        queryParams,
+        queryParams ?? {},
         (data: Provider[]) => data,
         (providers) => providers
       ),

@@ -51,7 +51,6 @@ export type LocationBasic = Pick<
 // PARAMS
 
 export type ListLocationsQueryParams = {
-  subdomain?: string;
   inactive?: boolean;
   foreign_id?: string;
   filter_by_subscription_feature?: SubscriptionFeature;

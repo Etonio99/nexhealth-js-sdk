@@ -12,14 +12,10 @@ export type WebhookSubscription = {
 // PARAMS
 
 export type ListWebhookSubscriptionsQueryParams = {
-  subdomain: string;
   resource_type?: WebhookResourceType;
   event?: WebhookEvent;
 };
 
-export type CreateWebhookSubscriptionQueryParams = {
-  subdomain: string;
-};
 
 export type CreateWebhookSubscriptionBodyParams = {
   resource_type: WebhookResourceType;

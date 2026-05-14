@@ -7,7 +7,7 @@ import type {
 
 export function V2SyncStatusesResource(request: RequestFunction) {
   return {
-    list: (queryParams: ListSyncStatusesQueryParams) =>
+    list: (queryParams?: ListSyncStatusesQueryParams) =>
       request<NexHealthApiResponse<SyncStatus[]>>(
         'sync_status',
         'GET',

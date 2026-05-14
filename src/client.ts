@@ -10,6 +10,7 @@ import {
 
 export class NexHealthClient {
   private apiKey: string;
+  private _subdomain: string | undefined;
   private bearerToken: string | null = null;
   private tokenExpiry: number = 0;
 
@@ -18,8 +19,21 @@ export class NexHealthClient {
   readonly v2: V2Resources;
   readonly v2024: V2024Resources;
 
-  constructor(apiKey: string) {
+  get subdomain(): string | undefined {
+    return this._subdomain;
+  }
+
+  set subdomain(value: string | undefined) {
+    this._subdomain = value;
+  }
+
+  clearSubdomain(): void {
+    this._subdomain = undefined;
+  }
+
+  constructor({ apiKey, subdomain }: { apiKey: string; subdomain?: string }) {
     this.apiKey = apiKey;
+    this._subdomain = subdomain;
 
     this.v2 = createV2Resources((endpoint, method, queryParams, data) =>
       this.request(endpoint, method, queryParams, data)
@@ -82,7 +96,12 @@ export class NexHealthClient {
     bodyParams?: unknown,
     headers?: Record<string, string>
   ): Promise<T> {
-    const url = `${this.baseURL}${endpoint}${queryParams ? `?${this.buildQueryString(queryParams as Record<string, unknown>)}` : ''}`;
+    const mergedParams = {
+      ...(this._subdomain ? { subdomain: this._subdomain } : {}),
+      ...((queryParams as Record<string, unknown>) ?? {}),
+    };
+    const queryString = this.buildQueryString(mergedParams);
+    const url = `${this.baseURL}${endpoint}${queryString ? `?${queryString}` : ''}`;
 
     const resolveToken = async (): Promise<string | null> => {
       const bearerToken = await this.getBearerToken();

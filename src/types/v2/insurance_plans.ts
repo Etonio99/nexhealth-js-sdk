@@ -42,7 +42,6 @@ export type InsuranceSubscriber = {
 // PARAMS
 
 export type ListInsurancePlansQueryParams = {
-  subdomain: string;
   location_id: number;
   name?: string;
   foreign_id?: string;
@@ -54,6 +53,5 @@ export type ListInsurancePlansQueryParams = {
 export type InsurancePlanInclude = 'patient_coverages' | 'subscribers';
 
 export type GetInsurancePlanQueryParams = {
-  subdomain: string;
   include?: InsurancePlanInclude[];
 };

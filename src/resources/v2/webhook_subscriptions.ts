@@ -2,7 +2,6 @@ import type { NexHealthApiResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   CreateWebhookSubscriptionBodyParams,
-  CreateWebhookSubscriptionQueryParams,
   ListWebhookSubscriptionsQueryParams,
   UpdateWebhookSubscriptionBodyParams,
   WebhookSubscription,
@@ -12,13 +11,12 @@ export function V2WebhookSubscriptionsResource(request: RequestFunction) {
   return {
     create: (
       webhookEndpointId: number,
-      queryParams: CreateWebhookSubscriptionQueryParams,
       bodyParams: CreateWebhookSubscriptionBodyParams
     ) =>
       request<NexHealthApiResponse<WebhookSubscription>>(
         `webhook_endpoints/${webhookEndpointId}/webhook_subscriptions`,
         'POST',
-        queryParams,
+        undefined,
         bodyParams
       ),
     delete: (webhookEndpointId: number, webhookSubscriptionId: number) =>
@@ -39,7 +37,7 @@ export function V2WebhookSubscriptionsResource(request: RequestFunction) {
       ),
     list: (
       webhookEndpointId: number,
-      queryParams: ListWebhookSubscriptionsQueryParams
+      queryParams?: ListWebhookSubscriptionsQueryParams
     ) =>
       request<NexHealthApiResponse<WebhookSubscription[]>>(
         `webhook_endpoints/${webhookEndpointId}/webhook_subscriptions`,

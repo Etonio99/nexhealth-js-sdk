@@ -11,7 +11,7 @@ export function V2LocationsResource(request: RequestFunction) {
   return {
     get: (locationId: number) =>
       request<NexHealthApiResponse<NexLocation>>(`locations/${locationId}`),
-    list: (queryParams: ListLocationsQueryParams) =>
+    list: (queryParams?: ListLocationsQueryParams) =>
       request<NexHealthApiResponse<NexLocation[]>>(
         'locations',
         'GET',
@@ -20,7 +20,7 @@ export function V2LocationsResource(request: RequestFunction) {
     descriptors: {
       list: (
         locationId: number,
-        queryParams: ListLocationAppointmentDescriptors
+        queryParams?: ListLocationAppointmentDescriptors
       ) =>
         request<NexHealthApiResponse<AppointmentDescriptor[]>>(
           `locations/${locationId}/appointment_descriptors`,

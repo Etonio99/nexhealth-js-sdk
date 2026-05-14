@@ -28,7 +28,7 @@ export function V2WebhookEndpointsResource(request: RequestFunction) {
         undefined,
         bodyParams
       ),
-    list: (queryParams: ListWebhookEndpointsQueryParams) =>
+    list: (queryParams?: ListWebhookEndpointsQueryParams) =>
       request<NexHealthApiResponse<WebhookEndpoint[]>>(
         'webhook_endpoints',
         'GET',

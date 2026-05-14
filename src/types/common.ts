@@ -6,3 +6,12 @@ export type RequestFunction = <T>(
   queryParams?: Record<string, unknown>,
   bodyParams?: unknown
 ) => Promise<T>;
+
+export type Weekday =
+  | 'Sunday'
+  | 'Monday'
+  | 'Tuesday'
+  | 'Wednesday'
+  | 'Thursday'
+  | 'Friday'
+  | 'Saturday';

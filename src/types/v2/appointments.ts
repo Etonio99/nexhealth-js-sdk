@@ -83,7 +83,6 @@ export type AppointmentDescriptor = {
 // PARAMS
 
 export type CreateAppointmentQueryParams = {
-  subdomain: string;
   location_id: number;
   notify_patient?: boolean;
 };
@@ -114,12 +113,10 @@ export type CreateAppointmentBodyParams = {
 };
 
 export type GetAppointmentQueryParams = {
-  subdomain: string;
   include?: AppointmentInclude[];
 };
 
 type BaseListAppointmentsQueryParams = {
-  subdomain: string;
   location_id: number;
   start: string;
   end: string;
@@ -151,9 +148,6 @@ export type AppointmentInclude =
   | 'operatory'
   | 'appointment_type';
 
-export type UpdateAppointmentQueryParams = {
-  subdomain: string;
-};
 
 export type UpdateAppointmentBodyParams = {
   appt: {
@@ -163,6 +157,5 @@ export type UpdateAppointmentBodyParams = {
 };
 
 export type ListAppointmentDescriptorsQueryParams = {
-  subdomain: string;
   descriptor_type?: string;
 };

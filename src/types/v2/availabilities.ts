@@ -1,3 +1,4 @@
+import type { Weekday } from '../common.js';
 import type { AppointmentType } from './appointment_types.js';
 import type { PaginationParams } from './common.js';
 
@@ -26,12 +27,10 @@ export type CustomRecurrence = {
 // PARAMS
 
 export type GetAvailabilityQueryParams = {
-  subdomain: string;
   include?: AvailabilityInclude[];
 };
 
 export type BaseListAvailabilitiesQueryParams = {
-  subdomain: string;
   location_id: number;
   include?: AvailabilityInclude[];
   provider_id?: number;
@@ -47,7 +46,6 @@ export type ListAllAvailabilitiesQueryParams =
   BaseListAvailabilitiesQueryParams;
 
 export type CreateAvailabilityQueryParams = {
-  subdomain: string;
   location_id: number;
 };
 
@@ -67,23 +65,6 @@ type BaseAvailabilityParams = {
 
 export type CreateAvailabilityBodyParams = BaseAvailabilityParams;
 
-export type DeleteAvailabilityQueryParams = {
-  subdomain: string;
-};
-
-export type UpdateAvailabilityQueryParams = {
-  subdomain: string;
-};
-
 export type UpdateAvailabilityBodyParams = BaseAvailabilityParams;
-
-export type Weekday =
-  | 'Sunday'
-  | 'Monday'
-  | 'Tuesday'
-  | 'Wednesday'
-  | 'Thursday'
-  | 'Friday'
-  | 'Saturday';
 
 export type AvailabilityInclude = 'appointment_types';

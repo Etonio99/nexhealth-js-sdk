@@ -24,7 +24,7 @@ export function V2024PatientsResource(request: RequestFunction) {
         queryParams,
         bodyParams
       ),
-    get: (patientId: number, queryParams: GetPatientQueryParams) =>
+    get: (patientId: number, queryParams?: GetPatientQueryParams) =>
       request<NexHealthApiResponse<Patient>>(
         `patients/${patientId}`,
         'GET',

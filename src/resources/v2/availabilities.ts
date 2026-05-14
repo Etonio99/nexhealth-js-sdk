@@ -4,9 +4,7 @@ import type {
   Availability,
   CreateAvailabilityBodyParams,
   CreateAvailabilityQueryParams,
-  DeleteAvailabilityQueryParams,
   UpdateAvailabilityBodyParams,
-  UpdateAvailabilityQueryParams,
   GetAvailabilityQueryParams,
   ListAllAvailabilitiesQueryParams,
   ListAvailabilitiesQueryParams,
@@ -25,23 +23,19 @@ export function V2AvailabilitiesResource(request: RequestFunction) {
         queryParams,
         bodyParams
       ),
-    delete: (
-      availabilityId: number,
-      queryParams: DeleteAvailabilityQueryParams
-    ) =>
-      request<null>(`availabilities/${availabilityId}`, 'DELETE', queryParams),
+    delete: (availabilityId: number) =>
+      request<null>(`availabilities/${availabilityId}`, 'DELETE'),
     update: (
       availabilityId: number,
-      queryParams: UpdateAvailabilityQueryParams,
-      bodyParams: UpdateAvailabilityBodyParams
+      bodyParams?: UpdateAvailabilityBodyParams
     ) =>
       request<NexHealthApiResponse<Availability>>(
         `availabilities/${availabilityId}`,
         'PATCH',
-        queryParams,
+        undefined,
         bodyParams
       ),
-    get: (availabilityId: number, queryParams: GetAvailabilityQueryParams) =>
+    get: (availabilityId: number, queryParams?: GetAvailabilityQueryParams) =>
       request<NexHealthApiResponse<Availability>>(
         `availabilities/${availabilityId}`,
         'GET',

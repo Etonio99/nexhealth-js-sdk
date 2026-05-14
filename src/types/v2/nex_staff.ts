@@ -18,7 +18,6 @@ export type NexStaff = {
 // PARAMS
 
 type BaseListNexStaffQueryParams = {
-  subdomain: string;
   inactive: boolean;
   location_ids: number[];
 };

@@ -10,7 +10,7 @@ import { paginateAll } from '../pagination.js';
 
 export function V2OperatoriesResource(request: RequestFunction) {
   return {
-    get: (operatoryId: number, queryParams: GetOperatoryQueryParams) =>
+    get: (operatoryId: number, queryParams?: GetOperatoryQueryParams) =>
       request<NexHealthApiResponse<Operatory>>(
         `operatories/${operatoryId}`,
         'GET',

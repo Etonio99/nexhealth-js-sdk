@@ -9,17 +9,17 @@ import { paginateAll } from '../pagination.js';
 
 export function V2ProceduresResource(request: RequestFunction) {
   return {
-    list: (queryParams: ListProceduresQueryParams) =>
+    list: (queryParams?: ListProceduresQueryParams) =>
       request<NexHealthApiResponse<Procedure[]>>(
         'procedures',
         'GET',
         queryParams
       ),
-    listAll: (queryParams: ListAllProceduresQueryParams) =>
+    listAll: (queryParams?: ListAllProceduresQueryParams) =>
       paginateAll(
         request,
         'procedures',
-        queryParams,
+        queryParams ?? {},
         (data: Procedure[]) => data,
         (procedures) => procedures
       ),

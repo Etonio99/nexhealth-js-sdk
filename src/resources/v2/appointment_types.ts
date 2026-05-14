@@ -3,10 +3,8 @@ import type { RequestFunction } from '../../types/common.js';
 import type {
   AppointmentType,
   CreateAppointmentTypeBodyParams,
-  CreateAppointmentTypeQueryParams,
   DeleteAppointmentTypeQueryParams,
   UpdateAppointmentTypeBodyParams,
-  UpdateAppointmentTypeQueryParams,
   GetAppointmentTypeQueryParams,
   ListAppointmentTypeDescriptorsQueryParams,
   ListAppointmentTypesQueryParams,
@@ -15,19 +13,16 @@ import type { AppointmentDescriptor } from '../../types/v2/appointments.js';
 
 export function V2AppointmentTypesResource(request: RequestFunction) {
   return {
-    create: (
-      queryParams: CreateAppointmentTypeQueryParams,
-      bodyParams: CreateAppointmentTypeBodyParams
-    ) =>
+    create: (bodyParams?: CreateAppointmentTypeBodyParams) =>
       request<NexHealthApiResponse<AppointmentType>>(
         'appointment_types',
         'POST',
-        queryParams,
+        undefined,
         bodyParams
       ),
     delete: (
       appointmentTypeId: number,
-      queryParams: DeleteAppointmentTypeQueryParams
+      queryParams?: DeleteAppointmentTypeQueryParams
     ) =>
       request<NexHealthApiResponse<AppointmentType>>(
         `appointment_types/${appointmentTypeId}`,
@@ -36,25 +31,24 @@ export function V2AppointmentTypesResource(request: RequestFunction) {
       ),
     update: (
       appointmentTypeId: number,
-      queryParams: UpdateAppointmentTypeQueryParams,
-      bodyParams: UpdateAppointmentTypeBodyParams
+      bodyParams?: UpdateAppointmentTypeBodyParams
     ) =>
       request<NexHealthApiResponse<AppointmentType>>(
         `appointment_types/${appointmentTypeId}`,
         'PATCH',
-        queryParams,
+        undefined,
         bodyParams
       ),
     get: (
       appointmentTypeId: number,
-      queryParams: GetAppointmentTypeQueryParams
+      queryParams?: GetAppointmentTypeQueryParams
     ) =>
       request<NexHealthApiResponse<AppointmentType>>(
         `appointment_types/${appointmentTypeId}`,
         'GET',
         queryParams
       ),
-    list: (queryParams: ListAppointmentTypesQueryParams) =>
+    list: (queryParams?: ListAppointmentTypesQueryParams) =>
       request<NexHealthApiResponse<AppointmentType[]>>(
         'appointment_types',
         'GET',
@@ -63,7 +57,7 @@ export function V2AppointmentTypesResource(request: RequestFunction) {
     descriptors: {
       list: (
         appointmentTypeId: number,
-        queryParams: ListAppointmentTypeDescriptorsQueryParams
+        queryParams?: ListAppointmentTypeDescriptorsQueryParams
       ) =>
         request<NexHealthApiResponse<AppointmentDescriptor[]>>(
           `appointment_types/${appointmentTypeId}/appointment_descriptors`,

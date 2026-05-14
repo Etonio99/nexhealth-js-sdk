@@ -21,12 +21,10 @@ export type Operatory = {
 //PARAMS
 
 export type GetOperatoryQueryParams = {
-  subdomain: string;
   include?: OperatoryInclude[];
 };
 
 type BaseListOperatoriesQueryParams = {
-  subdomain: string;
   location_id: number;
   search_name?: string;
   foreign_id?: string;
