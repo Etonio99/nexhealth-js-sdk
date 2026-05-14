@@ -4,5 +4,5 @@
 
 export * from './base.js';
 export * from './common.js';
-export * as v2 from './v2/index.js';
-export * as v2024 from './v2024/index.js';
+export * as V2 from './v2/index.js';
+export * as V2024 from './v2024/index.js';
