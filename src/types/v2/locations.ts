@@ -1,4 +1,4 @@
-export type Locations = {
+export type InstitutionLocations = {
   id: number;
   name: string;
   subdomain: string;

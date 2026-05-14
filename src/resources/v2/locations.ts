@@ -4,6 +4,7 @@ import type { AppointmentDescriptor } from '../../types/v2/appointments.js';
 import type {
   ListLocationAppointmentDescriptors,
   ListLocationsQueryParams,
+  InstitutionLocations,
   NexLocation,
 } from '../../types/v2/locations.js';
 
@@ -12,7 +13,7 @@ export function V2LocationsResource(request: RequestFunction) {
     get: (locationId: number) =>
       request<NexHealthResponse<NexLocation>>(`locations/${locationId}`),
     list: (queryParams?: ListLocationsQueryParams) =>
-      request<NexHealthResponse<NexLocation[]>>(
+      request<NexHealthResponse<InstitutionLocations[]>>(
         'locations',
         'GET',
         queryParams
