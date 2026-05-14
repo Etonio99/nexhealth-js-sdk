@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type {
   CreatePatientBodyParams,
   CreatePatientQueryParams,
@@ -19,14 +19,14 @@ export function V2PatientsResource(request: RequestFunction) {
       queryParams: CreatePatientQueryParams,
       bodyParams: CreatePatientBodyParams
     ) =>
-      request<NexHealthApiResponse<{ user: Patient }>>(
+      request<NexHealthResponse<{ user: Patient }>>(
         'patients',
         'POST',
         queryParams,
         bodyParams
       ),
     get: (patientId: number, queryParams?: GetPatientQueryParams) =>
-      request<NexHealthApiResponse<Patient>>(
+      request<NexHealthResponse<Patient>>(
         `patients/${patientId}`,
         'GET',
         queryParams
@@ -35,13 +35,13 @@ export function V2PatientsResource(request: RequestFunction) {
       patientId: number,
       queryParams?: GetPatientInsuranceCoveragesQueryParams
     ) =>
-      request<NexHealthApiResponse<InsuranceCoverage[]>>(
+      request<NexHealthResponse<InsuranceCoverage[]>>(
         `patients/${patientId}/insurance_coverages`,
         'GET',
         queryParams
       ),
     list: (queryParams: ListPatientsQueryParams) =>
-      request<NexHealthApiResponse<{ patients: Patient[] }>>(
+      request<NexHealthResponse<{ patients: Patient[] }>>(
         'patients',
         'GET',
         queryParams

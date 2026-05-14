@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   GetProviderQueryParams,
@@ -11,13 +11,13 @@ import { paginateAll } from '../pagination.js';
 export function V2ProvidersResource(request: RequestFunction) {
   return {
     get: (providerId: number, queryParams?: GetProviderQueryParams) =>
-      request<NexHealthApiResponse<Provider>>(
+      request<NexHealthResponse<Provider>>(
         `providers/${providerId}`,
         'GET',
         queryParams
       ),
     list: (queryParams?: ListProvidersQueryParams) =>
-      request<NexHealthApiResponse<Provider[]>>(
+      request<NexHealthResponse<Provider[]>>(
         'providers',
         'GET',
         queryParams

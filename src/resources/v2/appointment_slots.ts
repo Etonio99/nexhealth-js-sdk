@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   AppointmentSlots,
@@ -8,7 +8,7 @@ import type {
 export function V2AppointmentSlotsResource(request: RequestFunction) {
   return {
     list: (queryParams: ListAppointmentSlotsQueryParams) =>
-      request<NexHealthApiResponse<AppointmentSlots[]>>(
+      request<NexHealthResponse<AppointmentSlots[]>>(
         'appointment_slots',
         'GET',
         queryParams

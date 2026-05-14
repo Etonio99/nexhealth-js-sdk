@@ -1,6 +1,5 @@
-import { NexHealthAPIError } from '../error.js';
 import { V2Constants } from './v2/constants.js';
-import type { NexHealthApiResponse } from '../types/base.js';
+import type { NexHealthResponse } from '../types/base.js';
 import type { RequestFunction } from '../types/common.js';
 
 export async function paginateAll<T, R>(
@@ -9,7 +8,7 @@ export async function paginateAll<T, R>(
   queryParams: Record<string, unknown>,
   extractItems: (data: R) => T[],
   buildData: (items: T[]) => R
-): Promise<NexHealthApiResponse<R>> {
+): Promise<NexHealthResponse<R>> {
   let hasNextPage = true;
   const items: T[] = [];
   let count = 0;
@@ -19,25 +18,23 @@ export async function paginateAll<T, R>(
   while (hasNextPage) {
     currentPage++;
 
-    const response = await request<NexHealthApiResponse<R>>(endpoint, 'GET', {
+    const response = await request<NexHealthResponse<R>>(endpoint, 'GET', {
       per_page: V2Constants.MAX_PER_PAGE,
       page: currentPage,
       ...queryParams,
     });
 
-    if (!response.code) throw new NexHealthAPIError();
-
-    if (response.count && !setCount) {
+    if (response.count != null && !setCount) {
       count = response.count;
       setCount = true;
     }
 
-    if (response.data) {
+    if (response.data != null) {
       items.push(...extractItems(response.data));
     }
 
     hasNextPage = currentPage * V2Constants.MAX_PER_PAGE < count;
   }
 
-  return { code: true, data: buildData(items), count };
+  return { data: buildData(items), count };
 }

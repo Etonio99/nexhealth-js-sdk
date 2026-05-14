@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   CreatePatientAlertBodyParams,
@@ -13,7 +13,7 @@ export function V2PatientAlertsResource(request: RequestFunction) {
       patientId: number,
       bodyParams: CreatePatientAlertBodyParams
     ) =>
-      request<NexHealthApiResponse<PatientAlert>>(
+      request<NexHealthResponse<PatientAlert>>(
         `patients/${patientId}/alerts`,
         'POST',
         undefined,
@@ -23,7 +23,7 @@ export function V2PatientAlertsResource(request: RequestFunction) {
       patientId: number,
       alertId: number,
     ) =>
-      request<NexHealthApiResponse<PatientAlert>>(
+      request<NexHealthResponse<PatientAlert>>(
         `patients/${patientId}/alerts/${alertId}`,
         'GET',
       ),
@@ -32,14 +32,14 @@ export function V2PatientAlertsResource(request: RequestFunction) {
       alertId: number,
       bodyParams: UpdatePatientAlertBodyParams
     ) =>
-      request<NexHealthApiResponse<PatientAlert>>(
+      request<NexHealthResponse<PatientAlert>>(
         `patients/${patientId}/alerts/${alertId}`,
         'PATCH',
         undefined,
         bodyParams
       ),
     list: (patientId: number, queryParams?: ListPatientAlertsQueryParams) =>
-      request<NexHealthApiResponse<PatientAlert[]>>(
+      request<NexHealthResponse<PatientAlert[]>>(
         `patients/${patientId}/alerts`,
         'GET',
         queryParams

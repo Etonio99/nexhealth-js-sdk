@@ -154,8 +154,7 @@ export class NexHealthClient {
     if (typeof parsed !== 'object' || parsed === null || !('code' in parsed)) {
       throw new NexHealthAPIError(
         'Unexpected response format from NexHealth API',
-        response.status,
-        parsed
+        response.status
       );
     }
 
@@ -163,9 +162,10 @@ export class NexHealthClient {
       const body = parsed as NexHealthApiResponse<never>;
       const errors = body.error ?? [];
       const message = errors[0] ?? body.description ?? 'NexHealth API error';
-      throw new NexHealthAPIError(message, response.status, body, errors);
+      throw new NexHealthAPIError(message, response.status, errors, body.description ?? null);
     }
 
-    return parsed as T;
+    const raw = parsed as NexHealthApiResponse<unknown>;
+    return { data: raw.data, count: raw.count, page_info: raw.page_info } as T;
   }
 }

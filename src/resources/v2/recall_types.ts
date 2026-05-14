@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   ListRecallTypesQueryParams,
@@ -8,11 +8,11 @@ import type {
 export function V2RecallTypesResource(request: RequestFunction) {
   return {
     get: (patientRecallId: number) =>
-      request<NexHealthApiResponse<RecallType>>(
+      request<NexHealthResponse<RecallType>>(
         `recall_types/${patientRecallId}`
       ),
     list: (queryParams: ListRecallTypesQueryParams) =>
-      request<NexHealthApiResponse<RecallType[]>>(
+      request<NexHealthResponse<RecallType[]>>(
         'recall_types',
         'GET',
         queryParams

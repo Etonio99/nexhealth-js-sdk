@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   ListAllNexStaffQueryParams,
@@ -10,7 +10,7 @@ import { paginateAll } from '../pagination.js';
 export function V2NexStaffResource(request: RequestFunction) {
   return {
     list: (queryParams: ListNexStaffQueryParams) =>
-      request<NexHealthApiResponse<NexStaff[]>>(
+      request<NexHealthResponse<NexStaff[]>>(
         'nex_staff',
         'GET',
         queryParams

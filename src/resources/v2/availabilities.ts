@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   Availability,
@@ -17,7 +17,7 @@ export function V2AvailabilitiesResource(request: RequestFunction) {
       queryParams: CreateAvailabilityQueryParams,
       bodyParams: CreateAvailabilityBodyParams
     ) =>
-      request<NexHealthApiResponse<Availability>>(
+      request<NexHealthResponse<Availability>>(
         'availabilities',
         'POST',
         queryParams,
@@ -29,20 +29,20 @@ export function V2AvailabilitiesResource(request: RequestFunction) {
       availabilityId: number,
       bodyParams?: UpdateAvailabilityBodyParams
     ) =>
-      request<NexHealthApiResponse<Availability>>(
+      request<NexHealthResponse<Availability>>(
         `availabilities/${availabilityId}`,
         'PATCH',
         undefined,
         bodyParams
       ),
     get: (availabilityId: number, queryParams?: GetAvailabilityQueryParams) =>
-      request<NexHealthApiResponse<Availability>>(
+      request<NexHealthResponse<Availability>>(
         `availabilities/${availabilityId}`,
         'GET',
         queryParams
       ),
     list: (queryParams: ListAvailabilitiesQueryParams) =>
-      request<NexHealthApiResponse<Availability[]>>(
+      request<NexHealthResponse<Availability[]>>(
         'availabilities',
         'GET',
         queryParams

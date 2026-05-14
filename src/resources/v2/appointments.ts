@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   Appointment,
@@ -20,7 +20,7 @@ export function V2AppointmentsResource(request: RequestFunction) {
       bodyParams: CreateAppointmentBodyParams
     ) =>
       request<
-        NexHealthApiResponse<{
+        NexHealthResponse<{
           appt: Appointment;
           stripe_client_secret?: string | null;
         }>
@@ -30,19 +30,19 @@ export function V2AppointmentsResource(request: RequestFunction) {
       bodyParams?: UpdateAppointmentBodyParams
     ) =>
       request<
-        NexHealthApiResponse<{
+        NexHealthResponse<{
           appt: Appointment;
           stripe_client_secret?: string | null;
         }>
       >(`appointments/${appointmentId}`, 'PATCH', undefined, bodyParams),
     get: (appointmentId: number, queryParams?: GetAppointmentQueryParams) =>
-      request<NexHealthApiResponse<Appointment>>(
+      request<NexHealthResponse<Appointment>>(
         `appointments/${appointmentId}`,
         'GET',
         queryParams
       ),
     list: (queryParams: ListAppointmentsQueryParams) =>
-      request<NexHealthApiResponse<Appointment[]>>(
+      request<NexHealthResponse<Appointment[]>>(
         'appointments',
         'GET',
         queryParams
@@ -60,7 +60,7 @@ export function V2AppointmentsResource(request: RequestFunction) {
         appointmentId: number,
         queryParams?: ListAppointmentDescriptorsQueryParams
       ) =>
-        request<NexHealthApiResponse<AppointmentDescriptor[]>>(
+        request<NexHealthResponse<AppointmentDescriptor[]>>(
           `appointments/${appointmentId}/appointment_descriptors`,
           'GET',
           queryParams
