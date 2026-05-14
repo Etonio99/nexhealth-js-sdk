@@ -1,6 +1,6 @@
 {
   "name": "nexhealth-js-sdk",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "An SDK for developing applications using the NexHealth Synchronizer and API.",
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
