@@ -22,7 +22,6 @@ export type Procedure = {
 // PARAMS
 
 export type BaseListProceduresQueryParams = {
-  subdomain: string;
   location_id?: number;
   provider_id?: number;
   patient_id?: number;

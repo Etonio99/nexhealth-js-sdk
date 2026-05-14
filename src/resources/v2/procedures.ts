@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   ListAllProceduresQueryParams,
@@ -9,17 +9,17 @@ import { paginateAll } from '../pagination.js';
 
 export function V2ProceduresResource(request: RequestFunction) {
   return {
-    list: (queryParams: ListProceduresQueryParams) =>
-      request<NexHealthApiResponse<Procedure[]>>(
+    list: (queryParams?: ListProceduresQueryParams) =>
+      request<NexHealthResponse<Procedure[]>>(
         'procedures',
         'GET',
         queryParams
       ),
-    listAll: (queryParams: ListAllProceduresQueryParams) =>
+    listAll: (queryParams?: ListAllProceduresQueryParams) =>
       paginateAll(
         request,
         'procedures',
-        queryParams,
+        queryParams ?? {},
         (data: Procedure[]) => data,
         (procedures) => procedures
       ),

@@ -18,12 +18,8 @@ export type RecallTypeBasic = Pick<
 
 // PARAMS
 
-export type GetRecallTypeQueryParams = {
-  subdomain: string;
-};
 
 export type ListRecallTypesQueryParams = {
-  subdomain: string;
   location_id: number;
   foreign_id?: string;
   updated_since?: string;

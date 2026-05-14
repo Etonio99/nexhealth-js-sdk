@@ -56,12 +56,10 @@ export type Hipaa = {
 // Params
 
 export type GetPatientQueryParams = {
-  subdomain: string;
   // TODO: Add "Include"
 };
 
 type BaseListPatientQueryParams = {
-  subdomain: string;
   location_id: string;
   sort?: 'id' | '-id' | 'updated_at' | '-updated_at';
   name?: string;
@@ -87,7 +85,6 @@ export type ListPatientsQueryParams = BaseListPatientQueryParams & {
 export type ListAllPatientsQueryParams = BaseListPatientQueryParams;
 
 export type CreatePatientQueryParams = {
-  subdomain: string;
   location_id: number;
 };
 

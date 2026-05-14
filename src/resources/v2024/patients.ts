@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type {
   CreatePatientBodyParams,
   CreatePatientQueryParams,
@@ -10,7 +10,6 @@ import type {
 
 import type { RequestFunction } from '../../types/common.js';
 import { V2024Constants } from './constants.js';
-import { NexHealthAPIError } from '../../error.js';
 
 export function V2024PatientsResource(request: RequestFunction) {
   return {
@@ -18,23 +17,23 @@ export function V2024PatientsResource(request: RequestFunction) {
       queryParams: CreatePatientQueryParams,
       bodyParams: CreatePatientBodyParams
     ) =>
-      request<NexHealthApiResponse<{ user: Patient }>>(
+      request<NexHealthResponse<{ user: Patient }>>(
         'patients',
         'POST',
         queryParams,
         bodyParams
       ),
-    get: (patientId: number, queryParams: GetPatientQueryParams) =>
-      request<NexHealthApiResponse<Patient>>(
+    get: (patientId: number, queryParams?: GetPatientQueryParams) =>
+      request<NexHealthResponse<Patient>>(
         `patients/${patientId}`,
         'GET',
         queryParams
       ),
     list: (queryParams: ListPatientsQueryParams) =>
-      request<NexHealthApiResponse<Patient[]>>('patients', 'GET', queryParams),
+      request<NexHealthResponse<Patient[]>>('patients', 'GET', queryParams),
     listAll: async (
       queryParams: ListAllPatientsQueryParams
-    ): Promise<NexHealthApiResponse<Patient[]>> => {
+    ): Promise<NexHealthResponse<Patient[]>> => {
       let hasNextPage = true;
       const patients: Patient[] = [];
 
@@ -50,31 +49,25 @@ export function V2024PatientsResource(request: RequestFunction) {
           requestParams['end_cursor'] = endCursor;
         }
 
-        const response = await request<NexHealthApiResponse<Patient[]>>(
+        const response = await request<NexHealthResponse<Patient[]>>(
           'patients',
           'GET',
           requestParams
         );
 
-        if (response.code) {
-          if (response.data) {
-            patients.push(...response.data);
-            count += response.data.length;
-          }
-          if (response.page_info) {
-            hasNextPage = response.page_info.has_next_page;
-            endCursor = response.page_info.end_cursor;
-          }
+        if (response.data != null) {
+          patients.push(...response.data);
+          count += response.data.length;
+        }
+        if (response.page_info) {
+          hasNextPage = response.page_info.has_next_page;
+          endCursor = response.page_info.end_cursor;
         } else {
-          throw new NexHealthAPIError();
+          hasNextPage = false;
         }
       }
 
-      return {
-        code: true,
-        data: patients,
-        count,
-      } as NexHealthApiResponse<Patient[]>;
+      return { data: patients, count };
     },
   };
 }

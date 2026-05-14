@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   ListSyncStatusesQueryParams,
@@ -7,8 +7,8 @@ import type {
 
 export function V2SyncStatusesResource(request: RequestFunction) {
   return {
-    list: (queryParams: ListSyncStatusesQueryParams) =>
-      request<NexHealthApiResponse<SyncStatus[]>>(
+    list: (queryParams?: ListSyncStatusesQueryParams) =>
+      request<NexHealthResponse<SyncStatus[]>>(
         'sync_status',
         'GET',
         queryParams

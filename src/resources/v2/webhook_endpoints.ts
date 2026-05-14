@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   CreateWebhookEndpointBodyParams,
@@ -10,7 +10,7 @@ import type {
 export function V2WebhookEndpointsResource(request: RequestFunction) {
   return {
     create: (bodyParams: CreateWebhookEndpointBodyParams) =>
-      request<NexHealthApiResponse<WebhookEndpoint>>(
+      request<NexHealthResponse<WebhookEndpoint>>(
         'webhook_endpoints',
         'POST',
         undefined,
@@ -22,14 +22,14 @@ export function V2WebhookEndpointsResource(request: RequestFunction) {
       webhookEndpointId: number,
       bodyParams: UpdateWebhookEndpointBodyParams
     ) =>
-      request<NexHealthApiResponse<WebhookEndpoint>>(
+      request<NexHealthResponse<WebhookEndpoint>>(
         `webhook_endpoints/${webhookEndpointId}`,
         'PATCH',
         undefined,
         bodyParams
       ),
-    list: (queryParams: ListWebhookEndpointsQueryParams) =>
-      request<NexHealthApiResponse<WebhookEndpoint[]>>(
+    list: (queryParams?: ListWebhookEndpointsQueryParams) =>
+      request<NexHealthResponse<WebhookEndpoint[]>>(
         'webhook_endpoints',
         'GET',
         queryParams

@@ -9,13 +9,6 @@ export type PatientAlert = {
 
 // PARAMS
 
-export type GetPatientAlertQueryParams = {
-  subdomain: string;
-};
-
-export type CreatePatientAlertQueryParams = {
-  subdomain: string;
-};
 
 export type CreatePatientAlertBodyParams = {
   patient_alert: {
@@ -23,9 +16,6 @@ export type CreatePatientAlertBodyParams = {
   };
 };
 
-export type UpdatePatientAlertQueryParams = {
-  subdomain: string;
-};
 
 export type UpdatePatientAlertBodyParams = {
   patient_alert: {
@@ -34,6 +24,5 @@ export type UpdatePatientAlertBodyParams = {
 };
 
 export type ListPatientAlertsQueryParams = {
-  subdomain: string;
   include_disabled?: boolean;
 };

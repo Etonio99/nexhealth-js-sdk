@@ -16,12 +16,8 @@ export type PatientRecall = {
 
 // PARAMS
 
-export type GetPatientRecallQueryParams = {
-  subdomain: string;
-};
 
 type BaseListPatientRecallsQueryParams = {
-  subdomain: string;
   location_id: number;
   recall_id?: number;
   patient_id?: number;

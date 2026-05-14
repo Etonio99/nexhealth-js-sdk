@@ -79,7 +79,6 @@ export type Bio = {
 // PARAMS
 
 export type GetPatientQueryParams = {
-  subdomain: string;
   include?: GetPatientInclude[];
 };
 
@@ -101,7 +100,6 @@ export type GetPatientInclude =
 export type ListPatientInclude = BasePatientInclude;
 
 type BaseListPatientQueryParams = {
-  subdomain: string;
   location_id: number;
   name?: string;
   email?: string;
@@ -126,7 +124,6 @@ export type ListPatientsQueryParams = BaseListPatientQueryParams &
 export type ListAllPatientsQueryParams = BaseListPatientQueryParams;
 
 export type CreatePatientQueryParams = {
-  subdomain: string;
   location_id: number;
 };
 
@@ -163,6 +160,4 @@ export type BioBodyParams = {
   race?: string;
 };
 
-export type GetPatientInsuranceCoveragesQueryParams = {
-  subdomain: string;
-} & PaginationParams;
+export type GetPatientInsuranceCoveragesQueryParams = PaginationParams;

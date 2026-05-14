@@ -16,7 +16,6 @@ export type AppointmentSlot = {
 // PARAMS
 
 export type ListAppointmentSlotsQueryParams = {
-  subdomain: string;
   start_date: string;
   days: number;
   lids: number[];

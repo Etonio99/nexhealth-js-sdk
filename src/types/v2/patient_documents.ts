@@ -10,13 +10,11 @@ export type PatientDocument = {
 // PARAMS
 
 export type ListPatientDocumentsQueryParams = {
-  subdomain: string;
   page?: number;
   per_page?: number;
 };
 
 export type CreatePatientDocumentQueryParams = {
-  subdomain: string;
   location_id: number;
 };
 

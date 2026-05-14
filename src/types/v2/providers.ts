@@ -38,12 +38,10 @@ export type ProviderRequestable = {
 // PARAMS
 
 export type GetProviderQueryParams = {
-  subdomain: string;
   include?: ProviderInclude[];
 };
 
 type BaseListProvidersQueryParams = {
-  subdomain: string;
   include?: ProviderInclude[];
   location_id?: number;
   ids?: number[];

@@ -1,18 +1,18 @@
 export class NexHealthAPIError extends Error {
   readonly status: number | undefined;
   readonly errors: string[];
-  readonly body: unknown;
+  readonly description: string | null;
 
   constructor(
-    message?: string,
+    message: string = 'NexHealth API error',
     status?: number,
-    body?: unknown,
-    errors: string[] = []
+    errors: string[] = [],
+    description: string | null = null
   ) {
-    super(message ?? 'NexHealth API error');
+    super(message);
     this.name = 'NexHealthAPIError';
     this.status = status;
     this.errors = errors;
-    this.body = body;
+    this.description = description;
   }
 }

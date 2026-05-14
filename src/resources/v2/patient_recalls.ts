@@ -1,7 +1,6 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
-  GetPatientRecallQueryParams,
   ListAllPatientRecallsQueryParams,
   ListPatientRecallsQueryParams,
   PatientRecall,
@@ -10,14 +9,12 @@ import { paginateAll } from '../pagination.js';
 
 export function V2PatientRecallsResource(request: RequestFunction) {
   return {
-    get: (patientRecallId: number, queryParams: GetPatientRecallQueryParams) =>
-      request<NexHealthApiResponse<PatientRecall>>(
-        `patient_recalls/${patientRecallId}`,
-        'GET',
-        queryParams
+    get: (patientRecallId: number) =>
+      request<NexHealthResponse<PatientRecall>>(
+        `patient_recalls/${patientRecallId}`
       ),
     list: (queryParams: ListPatientRecallsQueryParams) =>
-      request<NexHealthApiResponse<PatientRecall[]>>(
+      request<NexHealthResponse<PatientRecall[]>>(
         'patient_recalls',
         'GET',
         queryParams

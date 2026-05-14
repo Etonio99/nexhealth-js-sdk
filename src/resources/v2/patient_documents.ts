@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   CreatePatientDocumentBodyParams,
@@ -22,7 +22,7 @@ export function V2PatientDocumentsResource(request: RequestFunction) {
           String(bodyParams.document_type_id)
         );
       }
-      return request<NexHealthApiResponse<PatientDocument>>(
+      return request<NexHealthResponse<PatientDocument>>(
         `patients/${patientId}/documents`,
         'POST',
         queryParams,
@@ -30,7 +30,7 @@ export function V2PatientDocumentsResource(request: RequestFunction) {
       );
     },
     list: (patientId: number, queryParams: ListPatientDocumentsQueryParams) =>
-      request<NexHealthApiResponse<PatientDocument[]>>(
+      request<NexHealthResponse<PatientDocument[]>>(
         `patients/${patientId}/documents`,
         'GET',
         queryParams

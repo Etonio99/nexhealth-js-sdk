@@ -14,7 +14,6 @@ export type PaymentPlan = {
 // PARAMS
 
 export type ListPaymentPlansQueryParams = {
-  subdomain: string;
   location_id: number;
   patient_id?: number;
   include?: PaymentPlanInclude[];

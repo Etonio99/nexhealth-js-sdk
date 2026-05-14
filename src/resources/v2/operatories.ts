@@ -1,4 +1,4 @@
-import type { NexHealthApiResponse } from '../../types/base.js';
+import type { NexHealthResponse } from '../../types/base.js';
 import type { RequestFunction } from '../../types/common.js';
 import type {
   GetOperatoryQueryParams,
@@ -10,14 +10,14 @@ import { paginateAll } from '../pagination.js';
 
 export function V2OperatoriesResource(request: RequestFunction) {
   return {
-    get: (operatoryId: number, queryParams: GetOperatoryQueryParams) =>
-      request<NexHealthApiResponse<Operatory>>(
+    get: (operatoryId: number, queryParams?: GetOperatoryQueryParams) =>
+      request<NexHealthResponse<Operatory>>(
         `operatories/${operatoryId}`,
         'GET',
         queryParams
       ),
     list: (queryParams: ListOperatoriesQueryParams) =>
-      request<NexHealthApiResponse<Operatory[]>>(
+      request<NexHealthResponse<Operatory[]>>(
         'operatories',
         'GET',
         queryParams

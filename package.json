@@ -9,13 +9,14 @@
   ],
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs",
       "default": "./dist/index.cjs"
     }
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && tsc --project tsconfig.build.json",
     "prepare": "npm run generate-barrels && npm run generate-resource-exports && npm run build",
     "prepublishOnly": "npm run build",
     "lint:fix": "eslint . --fix && npx prettier --write .",
