@@ -69,7 +69,7 @@ _Makes a `DELETE` request._
 Takes the resource ID and optional query parameters:
 
 ```javascript
-await nexhealth.v2.appointmentTypes.delete(67890);
+await nexhealth.v2.appointmentTypes.delete(54321);
 ```
 
 ### Get
@@ -90,11 +90,13 @@ Takes query parameters:
 
 ```javascript
 const response = await nexhealth.v2.appointments.list({
-  start_date: '2025-01-01',
-  end_date: '2025-01-31',
+  start_date: '2026-01-01',
+  end_date: '2026-01-31',
   location_id: 12345,
 });
 ```
+
+The `list` method response will contain `page_info`.
 
 ### ListAll
 
@@ -104,8 +106,8 @@ This is a custom method specific to this SDK. It will automatically paginate thr
 
 ```javascript
 const response = await nexhealth.v2.appointments.listAll({
-  start_date: '2025-01-01',
-  end_date: '2025-01-31',
+  start_date: '2026-01-01',
+  end_date: '2026-01-31',
   location_id: 12345,
 });
 ```
