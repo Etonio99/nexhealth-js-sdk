@@ -1,6 +1,6 @@
 import { NexHealthAPIError } from './error.js';
 import type { AuthenticatesData } from './types/v2/authenticates.js';
-import type { NexHealthApiResponse } from './types/base.js';
+import type { NexHealthApiResponse, NexHealthResponse } from './types/base.js';
 import type { Method } from './types/common.js';
 import { createV2Resources, type V2Resources } from './resources/v2/index.js';
 import {
@@ -137,7 +137,10 @@ export class NexHealthClient {
     });
 
     if (response.status === 204) {
-      return null as T;
+      const response = {
+        data: null,
+      } as NexHealthResponse<null>;
+      return response as T;
     }
 
     let parsed: unknown;
@@ -162,7 +165,12 @@ export class NexHealthClient {
       const body = parsed as NexHealthApiResponse<never>;
       const errors = body.error ?? [];
       const message = errors[0] ?? body.description ?? 'NexHealth API error';
-      throw new NexHealthAPIError(message, response.status, errors, body.description ?? null);
+      throw new NexHealthAPIError(
+        message,
+        response.status,
+        errors,
+        body.description ?? null
+      );
     }
 
     const raw = parsed as NexHealthApiResponse<unknown>;
