@@ -31,15 +31,6 @@ export function V2PatientsResource(request: RequestFunction) {
         'GET',
         queryParams
       ),
-    getInsuranceCoverages: (
-      patientId: number,
-      queryParams?: GetPatientInsuranceCoveragesQueryParams
-    ) =>
-      request<NexHealthResponse<InsuranceCoverage[]>>(
-        `patients/${patientId}/insurance_coverages`,
-        'GET',
-        queryParams
-      ),
     list: (queryParams: ListPatientsQueryParams) =>
       request<NexHealthResponse<{ patients: Patient[] }>>(
         'patients',
@@ -54,5 +45,16 @@ export function V2PatientsResource(request: RequestFunction) {
         (data: { patients: Patient[] }) => data.patients,
         (patients) => ({ patients })
       ),
+    insuranceCoverages: {
+      list: (
+        patientId: number,
+        queryParams?: GetPatientInsuranceCoveragesQueryParams
+      ) =>
+        request<NexHealthResponse<InsuranceCoverage[]>>(
+          `patients/${patientId}/insurance_coverages`,
+          'GET',
+          queryParams
+        ),
+    },
   };
 }
