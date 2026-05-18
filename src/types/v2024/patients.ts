@@ -56,8 +56,22 @@ export type Hipaa = {
 // Params
 
 export type GetPatientQueryParams = {
-  // TODO: Add "Include"
+  include?: GetPatientInclude[];
 };
+
+export type GetPatientInclude =
+  | 'upcoming_appts'
+  | 'last_visited_appointment'
+  | 'children'
+  | 'guarantor'
+  | 'procedures'
+  | 'insurance_coverages'
+  | 'adjustments'
+  | 'charges'
+  | 'payments'
+  | 'patient_alerts'
+  | 'address'
+  | 'provider';
 
 type BaseListPatientQueryParams = {
   location_id: string;
@@ -73,7 +87,6 @@ type BaseListPatientQueryParams = {
   non_patient?: boolean;
   forms_syncable?: boolean;
   location_strict?: boolean;
-  // TODO: Add "Include"
 };
 
 export type ListPatientsQueryParams = BaseListPatientQueryParams & {
