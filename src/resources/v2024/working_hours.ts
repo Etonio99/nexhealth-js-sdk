@@ -9,6 +9,11 @@ import type {
   UpdateWorkingHourBodyParams,
   WorkingHour,
 } from '../../types/v2024/working_hours.js';
+import type {
+  ListAllWorkingHourLabelsQueryParams,
+  ListWorkingHourLabelsQueryParams,
+  WorkingHourLabel,
+} from '../../types/v2024/working_hour_labels.js';
 import { cursorPaginateAll } from './cursor_pagination.js';
 
 export function V2024WorkingHoursResource(request: RequestFunction) {
@@ -46,5 +51,19 @@ export function V2024WorkingHoursResource(request: RequestFunction) {
       ),
     listAll: (queryParams: ListAllWorkingHoursQueryParams) =>
       cursorPaginateAll<WorkingHour>(request, 'working_hours', queryParams),
+    labels: {
+      list: (queryParams?: ListWorkingHourLabelsQueryParams) =>
+        request<NexHealthResponse<WorkingHourLabel[]>>(
+          'working_hour_labels',
+          'GET',
+          queryParams
+        ),
+      listAll: (queryParams?: ListAllWorkingHourLabelsQueryParams) =>
+        cursorPaginateAll<WorkingHourLabel>(
+          request,
+          'working_hour_labels',
+          queryParams ?? {}
+        ),
+    },
   };
 }

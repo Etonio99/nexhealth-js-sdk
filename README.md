@@ -199,8 +199,7 @@ const params: V2.CreatePatientQueryParams = {
 | AvailableSlots        | `list`                                                           |
 | Charges               | `get`, `list`, `listAll`                                         |
 | ClinicalNotes         | `list`, `listAll`                                                |
-| FeeScheduleProcedures | `list`, `listAll`                                                |
-| FeeSchedules          | `get`, `list`, `listAll`                                         |
+| FeeSchedules          | `get`, `list`, `listAll`, `procedures.list`, `procedures.listAll` |
 | GuarantorBalances     | `get`, `list`, `listAll`                                         |
 | InsuranceBalances     | `get`, `list`, `listAll`                                         |
 | InsuranceClaims       | `get`, `list`, `listAll`                                         |
@@ -217,5 +216,4 @@ const params: V2.CreatePatientQueryParams = {
 | Providers             | `get`, `list`, `listAll`                                         |
 | TreatmentPlans        | `get`, `list`, `listAll`                                         |
 | WebhookSubscriptions  | `create`, `delete`, `list`, `update`                             |
-| WorkingHourLabels     | `list`, `listAll`                                                |
-| WorkingHours          | `create`, `delete`, `get`, `list`, `listAll`, `update`           |
+| WorkingHours          | `create`, `delete`, `get`, `list`, `listAll`, `update`, `labels.list`, `labels.listAll` |

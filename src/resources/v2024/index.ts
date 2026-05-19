@@ -5,7 +5,6 @@ import { V2024AppointmentsResource } from './appointments.js';
 import { V2024AvailableSlotsResource } from './available_slots.js';
 import { V2024ChargesResource } from './charges.js';
 import { V2024ClinicalNotesResource } from './clinical_notes.js';
-import { V2024FeeScheduleProceduresResource } from './fee_schedule_procedures.js';
 import { V2024FeeSchedulesResource } from './fee_schedules.js';
 import { V2024GuarantorBalancesResource } from './guarantor_balances.js';
 import { V2024InsuranceBalancesResource } from './insurance_balances.js';
@@ -23,7 +22,6 @@ import { V2024ProviderSearchResource } from './provider_search.js';
 import { V2024ProvidersResource } from './providers.js';
 import { V2024TreatmentPlansResource } from './treatment_plans.js';
 import { V2024WebhookSubscriptionsResource } from './webhook_subscriptions.js';
-import { V2024WorkingHourLabelsResource } from './working_hour_labels.js';
 import { V2024WorkingHoursResource } from './working_hours.js';
 
 export function createV2024Resources(request: RequestFunction) {
@@ -34,7 +32,6 @@ export function createV2024Resources(request: RequestFunction) {
     availableSlots: V2024AvailableSlotsResource(request),
     charges: V2024ChargesResource(request),
     clinicalNotes: V2024ClinicalNotesResource(request),
-    feeScheduleProcedures: V2024FeeScheduleProceduresResource(request),
     feeSchedules: V2024FeeSchedulesResource(request),
     guarantorBalances: V2024GuarantorBalancesResource(request),
     insuranceBalances: V2024InsuranceBalancesResource(request),
@@ -52,7 +49,6 @@ export function createV2024Resources(request: RequestFunction) {
     providers: V2024ProvidersResource(request),
     treatmentPlans: V2024TreatmentPlansResource(request),
     webhookSubscriptions: V2024WebhookSubscriptionsResource(request),
-    workingHourLabels: V2024WorkingHourLabelsResource(request),
     workingHours: V2024WorkingHoursResource(request),
   };
 }
