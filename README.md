@@ -191,4 +191,31 @@ const params: V2.CreatePatientQueryParams = {
 
 ### v20240412
 
-This endpoint has not yet been implemented.
+| Endpoint              | Methods                                                          |
+| --------------------- | ---------------------------------------------------------------- |
+| AdjustmentTypes       | `get`, `list`, `listAll`                                         |
+| Adjustments           | `create`, `get`, `list`, `listAll`                               |
+| Appointments          | `create`, `get`, `list`, `listAll`, `update`, `descriptors.list` |
+| AvailableSlots        | `list`                                                           |
+| Charges               | `get`, `list`, `listAll`                                         |
+| ClinicalNotes         | `list`, `listAll`                                                |
+| FeeScheduleProcedures | `list`, `listAll`                                                |
+| FeeSchedules          | `get`, `list`, `listAll`                                         |
+| GuarantorBalances     | `get`, `list`, `listAll`                                         |
+| InsuranceBalances     | `get`, `list`, `listAll`                                         |
+| InsuranceClaims       | `get`, `list`, `listAll`                                         |
+| InsuranceCoverages    | `get`, `list`, `listAll`                                         |
+| InsurancePlans        | `get`, `list`, `listAll`                                         |
+| Onboardings           | `create`, `get`, `list`, `listAll`                               |
+| Operatories           | `list`, `listAll`                                                |
+| PatientRecalls        | `list`, `listAll`                                                |
+| Patients              | `create`, `get`, `list`, `listAll`                               |
+| PaymentTypes          | `get`, `list`, `listAll`                                         |
+| Payments              | `create`, `get`, `list`, `listAll`                               |
+| Procedures            | `get`, `list`, `listAll`                                         |
+| ProviderSearch        | `list`                                                           |
+| Providers             | `get`, `list`, `listAll`                                         |
+| TreatmentPlans        | `get`, `list`, `listAll`                                         |
+| WebhookSubscriptions  | `create`, `delete`, `list`, `update`                             |
+| WorkingHourLabels     | `list`, `listAll`                                                |
+| WorkingHours          | `create`, `delete`, `get`, `list`, `listAll`, `update`           |
