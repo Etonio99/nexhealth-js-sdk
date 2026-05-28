@@ -75,10 +75,11 @@ type BaseListInsuranceClaimsQueryParams = {
   sort?: 'updated_at' | '-updated_at';
 };
 
-export type ListInsuranceClaimsQueryParams = BaseListInsuranceClaimsQueryParams &
-  CursorPaginationParams;
+export type ListInsuranceClaimsQueryParams =
+  BaseListInsuranceClaimsQueryParams & CursorPaginationParams;
 
-export type ListAllInsuranceClaimsQueryParams = BaseListInsuranceClaimsQueryParams;
+export type ListAllInsuranceClaimsQueryParams =
+  BaseListInsuranceClaimsQueryParams;
 
 export type GetInsuranceClaimInclude =
   | 'patient'

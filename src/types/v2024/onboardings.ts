@@ -17,10 +17,17 @@ export type OnboardingStatus = 'in_progress' | 'complete' | 'failed';
 type BaseListOnboardingsQueryParams = {
   subdomain?: string;
   status?: OnboardingStatus;
-  sort?: 'created_at' | '-created_at' | 'status' | '-status' | 'subdomain' | '-subdomain';
+  sort?:
+    | 'created_at'
+    | '-created_at'
+    | 'status'
+    | '-status'
+    | 'subdomain'
+    | '-subdomain';
 };
 
-export type ListOnboardingsQueryParams = BaseListOnboardingsQueryParams & CursorPaginationParams;
+export type ListOnboardingsQueryParams = BaseListOnboardingsQueryParams &
+  CursorPaginationParams;
 
 export type ListAllOnboardingsQueryParams = BaseListOnboardingsQueryParams;
 

@@ -32,9 +32,10 @@ type BaseListGuarantorBalancesQueryParams = {
   sort?: 'updated_at' | '-updated_at';
 };
 
-export type ListGuarantorBalancesQueryParams = BaseListGuarantorBalancesQueryParams &
-  CursorPaginationParams;
+export type ListGuarantorBalancesQueryParams =
+  BaseListGuarantorBalancesQueryParams & CursorPaginationParams;
 
-export type ListAllGuarantorBalancesQueryParams = BaseListGuarantorBalancesQueryParams;
+export type ListAllGuarantorBalancesQueryParams =
+  BaseListGuarantorBalancesQueryParams;
 
 export type GuarantorBalanceInclude = 'guarantor';

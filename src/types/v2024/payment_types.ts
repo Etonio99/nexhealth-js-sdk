@@ -15,6 +15,7 @@ type BaseListPaymentTypesQueryParams = {
   active?: boolean;
 };
 
-export type ListPaymentTypesQueryParams = BaseListPaymentTypesQueryParams & CursorPaginationParams;
+export type ListPaymentTypesQueryParams = BaseListPaymentTypesQueryParams &
+  CursorPaginationParams;
 
 export type ListAllPaymentTypesQueryParams = BaseListPaymentTypesQueryParams;

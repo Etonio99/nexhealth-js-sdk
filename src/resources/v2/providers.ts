@@ -17,11 +17,7 @@ export function V2ProvidersResource(request: RequestFunction) {
         queryParams
       ),
     list: (queryParams?: ListProvidersQueryParams) =>
-      request<NexHealthResponse<Provider[]>>(
-        'providers',
-        'GET',
-        queryParams
-      ),
+      request<NexHealthResponse<Provider[]>>('providers', 'GET', queryParams),
     listAll: (queryParams?: ListAllProvidersQueryParams) =>
       paginateAll(
         request,

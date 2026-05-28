@@ -1,6 +1,9 @@
 import type { CursorPaginationParams } from './common.js';
 import type { FeeSchedule } from './fee_schedules.js';
-import type { InsuranceCoverage, InsuranceSubscriber } from './insurance_coverages.js';
+import type {
+  InsuranceCoverage,
+  InsuranceSubscriber,
+} from './insurance_coverages.js';
 
 export type InsurancePlan = {
   id: number;
@@ -39,6 +42,10 @@ type BaseListInsurancePlansQueryParams = {
 export type ListInsurancePlansQueryParams = BaseListInsurancePlansQueryParams &
   CursorPaginationParams;
 
-export type ListAllInsurancePlansQueryParams = BaseListInsurancePlansQueryParams;
+export type ListAllInsurancePlansQueryParams =
+  BaseListInsurancePlansQueryParams;
 
-export type InsurancePlanInclude = 'patient_coverages' | 'subscribers' | 'fee_schedule';
+export type InsurancePlanInclude =
+  | 'patient_coverages'
+  | 'subscribers'
+  | 'fee_schedule';

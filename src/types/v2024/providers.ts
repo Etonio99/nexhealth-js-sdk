@@ -76,8 +76,12 @@ type BaseListProvidersQueryParams = {
   include?: ProviderInclude[];
 };
 
-export type ListProvidersQueryParams = BaseListProvidersQueryParams & CursorPaginationParams;
+export type ListProvidersQueryParams = BaseListProvidersQueryParams &
+  CursorPaginationParams;
 
 export type ListAllProvidersQueryParams = BaseListProvidersQueryParams;
 
-export type ProviderInclude = 'locations' | 'availabilities' | 'appointment_types';
+export type ProviderInclude =
+  | 'locations'
+  | 'availabilities'
+  | 'appointment_types';

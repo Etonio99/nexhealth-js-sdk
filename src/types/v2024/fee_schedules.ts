@@ -22,7 +22,8 @@ type BaseListFeeSchedulesQueryParams = {
   active?: boolean;
 };
 
-export type ListFeeSchedulesQueryParams = BaseListFeeSchedulesQueryParams & CursorPaginationParams;
+export type ListFeeSchedulesQueryParams = BaseListFeeSchedulesQueryParams &
+  CursorPaginationParams;
 
 export type ListAllFeeSchedulesQueryParams = BaseListFeeSchedulesQueryParams;
 

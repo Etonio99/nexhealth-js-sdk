@@ -10,11 +10,7 @@ import { paginateAll } from '../pagination.js';
 export function V2NexStaffResource(request: RequestFunction) {
   return {
     list: (queryParams: ListNexStaffQueryParams) =>
-      request<NexHealthResponse<NexStaff[]>>(
-        'nex_staff',
-        'GET',
-        queryParams
-      ),
+      request<NexHealthResponse<NexStaff[]>>('nex_staff', 'GET', queryParams),
     listAll: (queryParams: ListAllNexStaffQueryParams) =>
       paginateAll(
         request,

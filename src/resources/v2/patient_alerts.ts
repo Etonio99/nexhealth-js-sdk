@@ -9,23 +9,17 @@ import type {
 
 export function V2PatientAlertsResource(request: RequestFunction) {
   return {
-    create: (
-      patientId: number,
-      bodyParams: CreatePatientAlertBodyParams
-    ) =>
+    create: (patientId: number, bodyParams: CreatePatientAlertBodyParams) =>
       request<NexHealthResponse<PatientAlert>>(
         `patients/${patientId}/alerts`,
         'POST',
         undefined,
         bodyParams
       ),
-    get: (
-      patientId: number,
-      alertId: number,
-    ) =>
+    get: (patientId: number, alertId: number) =>
       request<NexHealthResponse<PatientAlert>>(
         `patients/${patientId}/alerts/${alertId}`,
-        'GET',
+        'GET'
       ),
     update: (
       patientId: number,

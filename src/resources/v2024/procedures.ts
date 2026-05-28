@@ -12,11 +12,7 @@ export function V2024ProceduresResource(request: RequestFunction) {
     get: (procedureId: number) =>
       request<NexHealthResponse<Procedure>>(`procedures/${procedureId}`, 'GET'),
     list: (queryParams: ListProceduresQueryParams) =>
-      request<NexHealthResponse<Procedure[]>>(
-        'procedures',
-        'GET',
-        queryParams
-      ),
+      request<NexHealthResponse<Procedure[]>>('procedures', 'GET', queryParams),
     listAll: (queryParams: ListAllProceduresQueryParams) =>
       cursorPaginateAll<Procedure>(request, 'procedures', queryParams),
   };

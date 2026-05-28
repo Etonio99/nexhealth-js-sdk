@@ -14,7 +14,8 @@ type BaseListWorkingHourLabelsQueryParams = {
   active?: boolean;
 };
 
-export type ListWorkingHourLabelsQueryParams = BaseListWorkingHourLabelsQueryParams &
-  CursorPaginationParams;
+export type ListWorkingHourLabelsQueryParams =
+  BaseListWorkingHourLabelsQueryParams & CursorPaginationParams;
 
-export type ListAllWorkingHourLabelsQueryParams = BaseListWorkingHourLabelsQueryParams;
+export type ListAllWorkingHourLabelsQueryParams =
+  BaseListWorkingHourLabelsQueryParams;

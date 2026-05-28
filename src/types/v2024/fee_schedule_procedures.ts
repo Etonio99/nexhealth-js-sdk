@@ -24,7 +24,8 @@ type BaseListFeeScheduleProceduresQueryParams = {
   updated_since?: string;
 };
 
-export type ListFeeScheduleProceduresQueryParams = BaseListFeeScheduleProceduresQueryParams &
-  CursorPaginationParams;
+export type ListFeeScheduleProceduresQueryParams =
+  BaseListFeeScheduleProceduresQueryParams & CursorPaginationParams;
 
-export type ListAllFeeScheduleProceduresQueryParams = BaseListFeeScheduleProceduresQueryParams;
+export type ListAllFeeScheduleProceduresQueryParams =
+  BaseListFeeScheduleProceduresQueryParams;

@@ -10,11 +10,7 @@ import { paginateAll } from '../pagination.js';
 export function V2ProceduresResource(request: RequestFunction) {
   return {
     list: (queryParams?: ListProceduresQueryParams) =>
-      request<NexHealthResponse<Procedure[]>>(
-        'procedures',
-        'GET',
-        queryParams
-      ),
+      request<NexHealthResponse<Procedure[]>>('procedures', 'GET', queryParams),
     listAll: (queryParams?: ListAllProceduresQueryParams) =>
       paginateAll(
         request,

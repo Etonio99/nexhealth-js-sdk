@@ -9,13 +9,11 @@ export type PatientAlert = {
 
 // PARAMS
 
-
 export type CreatePatientAlertBodyParams = {
   patient_alert: {
     note: string;
   };
 };
-
 
 export type UpdatePatientAlertBodyParams = {
   patient_alert: {

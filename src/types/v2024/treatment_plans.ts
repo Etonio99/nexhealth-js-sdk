@@ -6,7 +6,13 @@ export type TreatmentPlan = {
   name: string;
   patient_id: number;
   updated_at: string;
-  status: 'proposed' | 'accepted' | 'rejected' | 'in_progress' | 'completed' | 'cancelled';
+  status:
+    | 'proposed'
+    | 'accepted'
+    | 'rejected'
+    | 'in_progress'
+    | 'completed'
+    | 'cancelled';
   procedures: Procedure[];
 };
 
@@ -21,7 +27,8 @@ type BaseListTreatmentPlansQueryParams = {
 export type ListTreatmentPlansQueryParams = BaseListTreatmentPlansQueryParams &
   CursorPaginationParams;
 
-export type ListAllTreatmentPlansQueryParams = BaseListTreatmentPlansQueryParams;
+export type ListAllTreatmentPlansQueryParams =
+  BaseListTreatmentPlansQueryParams;
 
 export type TreatmentPlanStatus =
   | 'proposed'

@@ -25,10 +25,7 @@ export function V2AppointmentsResource(request: RequestFunction) {
           stripe_client_secret?: string | null;
         }>
       >('appointments', 'POST', queryParams, bodyParams),
-    update: (
-      appointmentId: number,
-      bodyParams?: UpdateAppointmentBodyParams
-    ) =>
+    update: (appointmentId: number, bodyParams?: UpdateAppointmentBodyParams) =>
       request<
         NexHealthResponse<{
           appt: Appointment;

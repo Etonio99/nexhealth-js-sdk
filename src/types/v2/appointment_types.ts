@@ -21,7 +21,6 @@ export type ListAppointmentTypesQueryParams = {
 
 export type AppointmentTypeInclude = 'descriptors';
 
-
 export type CreateAppointmentTypeBodyParams = {
   location_id?: number;
   appointment_type: {
@@ -33,7 +32,6 @@ export type CreateAppointmentTypeBodyParams = {
     emr_appt_descriptor_ids?: number[];
   };
 };
-
 
 export type UpdateAppointmentTypeBodyParams = {
   location_id?: number;

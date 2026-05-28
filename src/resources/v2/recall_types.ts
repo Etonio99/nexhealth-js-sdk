@@ -8,9 +8,7 @@ import type {
 export function V2RecallTypesResource(request: RequestFunction) {
   return {
     get: (patientRecallId: number) =>
-      request<NexHealthResponse<RecallType>>(
-        `recall_types/${patientRecallId}`
-      ),
+      request<NexHealthResponse<RecallType>>(`recall_types/${patientRecallId}`),
     list: (queryParams: ListRecallTypesQueryParams) =>
       request<NexHealthResponse<RecallType[]>>(
         'recall_types',

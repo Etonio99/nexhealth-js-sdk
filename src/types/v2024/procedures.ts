@@ -32,6 +32,7 @@ type BaseListProceduresQueryParams = {
   sort?: 'updated_at' | '-updated_at';
 };
 
-export type ListProceduresQueryParams = BaseListProceduresQueryParams & CursorPaginationParams;
+export type ListProceduresQueryParams = BaseListProceduresQueryParams &
+  CursorPaginationParams;
 
 export type ListAllProceduresQueryParams = BaseListProceduresQueryParams;

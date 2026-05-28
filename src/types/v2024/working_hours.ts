@@ -42,7 +42,8 @@ type BaseListWorkingHoursQueryParams = {
   include?: WorkingHourInclude[];
 };
 
-export type ListWorkingHoursQueryParams = BaseListWorkingHoursQueryParams & CursorPaginationParams;
+export type ListWorkingHoursQueryParams = BaseListWorkingHoursQueryParams &
+  CursorPaginationParams;
 
 export type ListAllWorkingHoursQueryParams = BaseListWorkingHoursQueryParams;
 

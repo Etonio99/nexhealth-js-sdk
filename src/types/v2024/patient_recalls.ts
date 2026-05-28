@@ -36,4 +36,5 @@ type BaseListPatientRecallsQueryParams = {
 export type ListPatientRecallsQueryParams = BaseListPatientRecallsQueryParams &
   CursorPaginationParams;
 
-export type ListAllPatientRecallsQueryParams = BaseListPatientRecallsQueryParams;
+export type ListAllPatientRecallsQueryParams =
+  BaseListPatientRecallsQueryParams;

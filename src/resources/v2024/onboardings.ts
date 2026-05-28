@@ -29,10 +29,6 @@ export function V2024OnboardingsResource(request: RequestFunction) {
         queryParams
       ),
     listAll: (queryParams?: ListAllOnboardingsQueryParams) =>
-      cursorPaginateAll<Onboarding>(
-        request,
-        'onboardings',
-        queryParams ?? {}
-      ),
+      cursorPaginateAll<Onboarding>(request, 'onboardings', queryParams ?? {}),
   };
 }

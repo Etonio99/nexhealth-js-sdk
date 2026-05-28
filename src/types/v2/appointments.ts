@@ -148,7 +148,6 @@ export type AppointmentInclude =
   | 'operatory'
   | 'appointment_type';
 
-
 export type UpdateAppointmentBodyParams = {
   appt: {
     confirmed?: boolean;

@@ -10,7 +10,11 @@ import { cursorPaginateAll } from './cursor_pagination.js';
 export function V2024OperatoriesResource(request: RequestFunction) {
   return {
     list: (queryParams: ListOperatoriesQueryParams) =>
-      request<NexHealthResponse<Operatory[]>>('operatories', 'GET', queryParams),
+      request<NexHealthResponse<Operatory[]>>(
+        'operatories',
+        'GET',
+        queryParams
+      ),
     listAll: (queryParams: ListAllOperatoriesQueryParams) =>
       cursorPaginateAll<Operatory>(request, 'operatories', queryParams),
   };

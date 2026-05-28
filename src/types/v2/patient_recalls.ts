@@ -16,7 +16,6 @@ export type PatientRecall = {
 
 // PARAMS
 
-
 type BaseListPatientRecallsQueryParams = {
   location_id: number;
   recall_id?: number;

@@ -79,7 +79,8 @@ type BaseListChargesQueryParams = {
   include?: ListChargeInclude[];
 };
 
-export type ListChargesQueryParams = BaseListChargesQueryParams & CursorPaginationParams;
+export type ListChargesQueryParams = BaseListChargesQueryParams &
+  CursorPaginationParams;
 
 export type ListAllChargesQueryParams = BaseListChargesQueryParams;
 

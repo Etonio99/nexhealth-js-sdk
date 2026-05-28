@@ -16,7 +16,8 @@ type BaseListAdjustmentTypesQueryParams = {
   active?: boolean;
 };
 
-export type ListAdjustmentTypesQueryParams = BaseListAdjustmentTypesQueryParams &
-  CursorPaginationParams;
+export type ListAdjustmentTypesQueryParams =
+  BaseListAdjustmentTypesQueryParams & CursorPaginationParams;
 
-export type ListAllAdjustmentTypesQueryParams = BaseListAdjustmentTypesQueryParams;
+export type ListAllAdjustmentTypesQueryParams =
+  BaseListAdjustmentTypesQueryParams;

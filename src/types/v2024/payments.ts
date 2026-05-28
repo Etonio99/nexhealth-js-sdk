@@ -87,7 +87,8 @@ type BaseListPaymentsQueryParams = {
   sort?: 'updated_at' | '-updated_at';
 };
 
-export type ListPaymentsQueryParams = BaseListPaymentsQueryParams & CursorPaginationParams;
+export type ListPaymentsQueryParams = BaseListPaymentsQueryParams &
+  CursorPaginationParams;
 
 export type ListAllPaymentsQueryParams = BaseListPaymentsQueryParams;
 

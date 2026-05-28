@@ -32,7 +32,8 @@ type BaseListOperatoriesQueryParams = {
   include?: OperatoryInclude[];
 };
 
-export type ListOperatoriesQueryParams = BaseListOperatoriesQueryParams & CursorPaginationParams;
+export type ListOperatoriesQueryParams = BaseListOperatoriesQueryParams &
+  CursorPaginationParams;
 
 export type ListAllOperatoriesQueryParams = BaseListOperatoriesQueryParams;
 

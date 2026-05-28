@@ -137,7 +137,8 @@ type BaseListAppointmentsQueryParams = {
   include?: AppointmentInclude[];
 };
 
-export type ListAppointmentsQueryParams = BaseListAppointmentsQueryParams & CursorPaginationParams;
+export type ListAppointmentsQueryParams = BaseListAppointmentsQueryParams &
+  CursorPaginationParams;
 
 export type ListAllAppointmentsQueryParams = BaseListAppointmentsQueryParams;
 

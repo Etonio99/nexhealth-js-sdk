@@ -31,7 +31,8 @@ type BaseListInsuranceCoveragesQueryParams = {
   active?: boolean;
 };
 
-export type ListInsuranceCoveragesQueryParams = BaseListInsuranceCoveragesQueryParams &
-  CursorPaginationParams;
+export type ListInsuranceCoveragesQueryParams =
+  BaseListInsuranceCoveragesQueryParams & CursorPaginationParams;
 
-export type ListAllInsuranceCoveragesQueryParams = BaseListInsuranceCoveragesQueryParams;
+export type ListAllInsuranceCoveragesQueryParams =
+  BaseListInsuranceCoveragesQueryParams;

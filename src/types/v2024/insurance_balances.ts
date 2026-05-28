@@ -26,7 +26,8 @@ type BaseListInsuranceBalancesQueryParams = {
   sort?: 'updated_at' | '-updated_at';
 };
 
-export type ListInsuranceBalancesQueryParams = BaseListInsuranceBalancesQueryParams &
-  CursorPaginationParams;
+export type ListInsuranceBalancesQueryParams =
+  BaseListInsuranceBalancesQueryParams & CursorPaginationParams;
 
-export type ListAllInsuranceBalancesQueryParams = BaseListInsuranceBalancesQueryParams;
+export type ListAllInsuranceBalancesQueryParams =
+  BaseListInsuranceBalancesQueryParams;

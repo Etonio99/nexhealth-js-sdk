@@ -76,7 +76,8 @@ type BaseListAdjustmentsQueryParams = {
   sort?: 'updated_at' | '-updated_at';
 };
 
-export type ListAdjustmentsQueryParams = BaseListAdjustmentsQueryParams & CursorPaginationParams;
+export type ListAdjustmentsQueryParams = BaseListAdjustmentsQueryParams &
+  CursorPaginationParams;
 
 export type ListAllAdjustmentsQueryParams = BaseListAdjustmentsQueryParams;
 

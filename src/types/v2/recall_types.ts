@@ -18,7 +18,6 @@ export type RecallTypeBasic = Pick<
 
 // PARAMS
 
-
 export type ListRecallTypesQueryParams = {
   location_id: number;
   foreign_id?: string;
