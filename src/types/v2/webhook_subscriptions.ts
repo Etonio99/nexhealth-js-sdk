@@ -16,7 +16,6 @@ export type ListWebhookSubscriptionsQueryParams = {
   event?: WebhookEvent;
 };
 
-
 export type CreateWebhookSubscriptionBodyParams = {
   resource_type: WebhookResourceType;
   event: WebhookEvent;
@@ -52,5 +51,8 @@ export type WebhookEvent =
   | 'patient_insurance_updated'
   | 'procedure_created'
   | 'procedure_updated'
+  | 'procedure_code_created'
+  | 'procedure_code_updated'
+  | 'procedure_code_deleted'
   | 'sync_status_read_change'
   | 'sync_status_write_change';
